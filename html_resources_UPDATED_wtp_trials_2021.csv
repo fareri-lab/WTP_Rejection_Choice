@@ -1,0 +1,71 @@
+﻿TrialNumber,social_left,Left,Right,leftmoney,rightmoney,greenText,left_more_than_right,matching_prices,social_worthmore
+1,0,Rearranging furniture in your house,Going to a carnival with friends,0.01,0.01,green,0,1,1
+2,0,Watching a new episode of a television show,Having a picnic with family,0.02,0.01,green,1,0,0
+3,0,"Painting your bedroom
+a new color",Having a romantic dinner with a significant other,0.03,0.01,green,1,0,0
+4,0,Playing with a pet,Studying abroad with friends,0.04,0.01,green,1,0,0
+5,0,Reading a book,Going to a friend’s birthday party,0.05,0.01,green,1,0,0
+6,0,"Listening to music
+by yourself","Giving a friend a ride
+to school",0.01,0.02,green,0,0,1
+7,0,Writing journal entries,Going to a nightclub with a group of friends,0.02,0.02,green,0,1,1
+8,0,Looking through old photo albums,Having a movie marathon with a roommate,0.03,0.02,green,1,0,0
+9,0,Studying for a test alone,Playing cards with friends,0.04,0.02,green,1,0,0
+10,0,Going to the beach alone,"Shopping for clothes
+with friends",0.05,0.02,green,1,0,0
+11,0,"Driving to school
+by yourself","Going to the movies
+with a significant other",0.01,0.03,green,0,0,1
+12,0,Doing your laundry,Going on a double date,0.02,0.03,green,0,0,1
+13,0,Putting gas in a car,"Going to a sporting
+event with friends",0.03,0.03,green,0,1,1
+14,0,Getting a haircut,Going on a dinner date,0.04,0.03,green,1,0,0
+15,0,Playing a videogame at home,"Snapchatting with
+friends",0.05,0.03,green,1,0,0
+16,0,"Going to a farmer's
+market by yourself",Getting lunch with coworkers,0.01,0.04,green,0,0,1
+17,0,Running a marathon,"Adding new friends
+on facebook",0.02,0.04,green,0,0,1
+18,0,Watching the news,Going to a family member’s baby shower,0.03,0.04,green,0,0,1
+19,0,Going on vacation by yourself,"Going to a work outing
+with colleagues",0.04,0.04,green,0,1,1
+20,0,Listening to a podcast,Getting breakfast with a significant other,0.05,0.04,green,1,0,0
+21,0,Going on a hike by yourself,Babysitting for a family member,0.01,0.05,green,0,0,1
+22,0,"Going for a bicycle
+ride alone","Going on Spring Break 
+vacation with friends",0.02,0.05,green,0,0,1
+23,0,Learning how to perform card tricks,Going camping with family,0.03,0.05,green,0,0,1
+24,0,Going to a museum alone,Participating in a debate,0.04,0.05,green,0,0,1
+25,0,Going grocery shopping alone,Having dinner with family,0.05,0.05,green,0,1,1
+26,1,Joining a club at school,Teaching yourself a different language,0.01,0.01,green,0,1,0
+27,1,Meeting new people at a party,Watching Netflix at home by yourself,0.02,0.01,green,1,0,1
+28,1,"Watching television
+with family",Reading news articles,0.03,0.01,green,1,0,1
+29,1,Traveling abroad with a significant other,Taking a road trip by yourself,0.04,0.01,green,1,0,1
+30,1,Going to the movies with a friend,Putting together a puzzle,0.05,0.01,green,1,0,1
+31,1,Joining a study group,Getting a slice of pizza by yourself,0.01,0.02,green,0,0,0
+32,1,Catching up with friends from high school,Shopping online,0.02,0.02,green,0,1,0
+33,1,Seeing a play with a significant other,Going to the movies by yourself,0.03,0.02,green,1,0,1
+34,1,"Gaining Twitter
+followers ","Taking an online
+class",0.04,0.02,green,1,0,1
+35,1,Spending a day at the beach with a friend,Trying out a new recipe at home,0.05,0.02,green,1,0,1
+36,1,Attending a family barbeque,Watching a football game from home,0.01,0.03,green,0,0,0
+37,1,Getting likes on a facebook post,Taking a nap,0.02,0.03,green,0,0,0
+38,1,"Going shopping with
+a significant other",Trying to solve a Rubik’s cube,0.03,0.03,green,0,1,0
+39,1,Taking a road trip with family,Planting flowers in a garden,0.04,0.03,green,1,0,1
+40,1,Playing a team sport,Going for a walk in the park,0.05,0.03,green,1,0,1
+41,1,Going to a party with roommates,Buying clothes for yourself,0.01,0.04,green,0,0,0
+42,1,Getting retweets on a picture,Buying coffee on the way to work,0.02,0.04,green,0,0,0
+43,1,Making breakfast for your family,"Watching YouTube
+videos",0.03,0.04,green,0,0,0
+44,1,"Gaining Instagram
+followers","Getting breakfast
+by yourself",0.04,0.04,green,0,1,0
+45,1,Getting likes on an Instagram picture,Drawing a picture,0.05,0.04,green,1,0,1
+46,1,Watching the sunset with a significant other,Reading at the library,0.01,0.05,green,0,0,0
+47,1,Attending a Superbowl party,Exercising from home,0.02,0.05,green,0,0,0
+48,1,Going to a concert with a friend,Practicing photography,0.03,0.05,green,0,0,0
+49,1,Attending a family member’s wedding,Practicing an instrument,0.04,0.05,green,0,0,0
+50,1,Playing a tennis match with a friend,Cleaning up around the house,0.05,0.05,green,0,1,0
