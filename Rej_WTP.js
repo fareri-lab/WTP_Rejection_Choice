@@ -1382,7 +1382,7 @@ function WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     WTP_trials = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.SEQUENTIAL
+      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'WTP_trials'
