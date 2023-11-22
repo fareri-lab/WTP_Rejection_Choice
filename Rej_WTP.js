@@ -89,7 +89,7 @@ psychoJS.start({
   resources: [
 
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
-        
+
         {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
@@ -202,7 +202,7 @@ var waiting_text;
 var feedbackClock;
 var displayfeedback_text;
 var fdbkimage_image;
-var startlottery;
+var startWTP;
 var continuesharingClock;
 var presstosharenextphoto_text;
 var sharenextphoto_key;
@@ -273,7 +273,7 @@ var partnermatch;
 var partneravatar;
 var feedbackresponses;
 var fdbkimage;
-var startlottery;
+var startWTP;
 var response_msg;
 var feedback_msg;
 var computer_choice;
@@ -560,7 +560,7 @@ async function experimentInit() {
   });
 
   // Run 'Begin Experiment' code from initiatelottery_code
-  startlottery = "";
+  startWTP = "";
 
   // Initialize components for Routine "continuesharing"
   continuesharingClock = new util.Clock();
@@ -1333,43 +1333,73 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+// insert wtp here
+var WTPloop;
+var WTP_trial;
+function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    WTPloop = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: startWTP, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: 'WTP_csv',
+      seed: undefined, name: 'WTPloop'
+    });
+    psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
+    currentLoop = WTPloop;  // we're now the current loop
 
+    WTP_trial = WTPloop.getCurrentTrial();
+    // Schedule all the trials in the trialList:
+    for (const thisWTPloop of WTPloop) {
+      snapshot = WTPloop.getSnapshot();
+      WTPloopLoopScheduler.add(importConditions(snapshot));
+      WTPloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
+      WTPloopLoopScheduler.add(ChoiceRoutineEachFrame());
+      WTPloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
+      const WTP_trialsLoopScheduler = new Scheduler(psychoJS);
+      WTPloopLoopScheduler.add(WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot));
+      WTPloopLoopScheduler.add(WTP_trialsLoopScheduler);
+      WTPloopLoopScheduler.add(WTP_trialsLoopEnd);
+      WTPloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
+      WTPloopLoopScheduler.add(ContinueRoutineEachFrame());
+      WTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
+      WTPloopLoopScheduler.add(WTPloopLoopEndIteration(WTPloopLoopScheduler, snapshot));
+    }
 
-var lotteryloop;
-function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
+    return Scheduler.Event.NEXT;
+  }
+}
+
+var trial_nums;
+var WTP_trials;
+function WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
 
     // set up handler to look after randomisation of conditions etc
-    lotteryloop = new TrialHandler({
+    WTP_trials = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: startlottery, method: TrialHandler.Method.RANDOM,
+      nReps: 1, method: TrialHandler.Method.SEQUENTIAL
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
-      seed: undefined, name: 'lotteryloop'
+      seed: undefined, name: 'WTP_trials'
     });
-    psychoJS.experiment.addLoop(lotteryloop); // add the loop to the experiment
-    currentLoop = lotteryloop;  // we're now the current loop
-
+    psychoJS.experiment.addLoop(WTP_trials); // add the loop to the experiment
+    currentLoop = WTP_trials;  // we're now the current loop
+    console.log(WTP_trials);
+    //list of trial numbers
+    trial_nums = list(range(1,51))
     // Schedule all the trials in the trialList:
-    for (const thisLotteryloop of lotteryloop) {
-      snapshot = lotteryloop.getSnapshot();
-      lotteryloopLoopScheduler.add(importConditions(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
-      const computerchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(computerchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(computerchoiceLoopEnd);
-      const selfchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(selfchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(selfchoiceLoopEnd);
-      lotteryloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ContinueRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
-      lotteryloopLoopScheduler.add(lotteryloopLoopEndIteration(lotteryloopLoopScheduler, snapshot));
+    for (const thisWTP_trials of WTP_trials) {
+      snapshot = WTP_trials.getSnapshot();
+      WTP_trialsLoopScheduler.add(importConditions(snapshot));
+      WTP_trialsLoopScheduler.add(WTP_trialsRoutineBegin(snapshot));
+      WTP_trialsLoopScheduler.add(WTP_trialsRoutineEachFrame());
+      WTP_trialsLoopScheduler.add(WTP_trialsRoutineEnd(snapshot));
+      WTP_trialsLoopScheduler.add(WTP_trialsLoopEndIteration(WTP_trialsLoopScheduler, snapshot));
     }
 
     return Scheduler.Event.NEXT;
@@ -1377,40 +1407,9 @@ function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
 }
 
 
-var computerchoice;
-function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-
-    // set up handler to look after randomisation of conditions etc
-    computerchoice = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: comprunOrNot, method: TrialHandler.Method.RANDOM,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'computerchoice'
-    });
-    psychoJS.experiment.addLoop(computerchoice); // add the loop to the experiment
-    currentLoop = computerchoice;  // we're now the current loop
-
-    // Schedule all the trials in the trialList:
-    for (const thisComputerchoice of computerchoice) {
-      snapshot = computerchoice.getSnapshot();
-      computerchoiceLoopScheduler.add(importConditions(snapshot));
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineBegin(snapshot));
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineEachFrame());
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineEnd(snapshot));
-      computerchoiceLoopScheduler.add(computerchoiceLoopEndIteration(computerchoiceLoopScheduler, snapshot));
-    }
-
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-async function computerchoiceLoopEnd() {
+async function WTP_trialsLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(computerchoice);
+  psychoJS.experiment.removeLoop(WTP_trials);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -1420,7 +1419,7 @@ async function computerchoiceLoopEnd() {
 }
 
 
-function computerchoiceLoopEndIteration(scheduler, snapshot) {
+function WTP_trialsLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1438,40 +1437,9 @@ function computerchoiceLoopEndIteration(scheduler, snapshot) {
 }
 
 
-var selfchoice;
-function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-
-    // set up handler to look after randomisation of conditions etc
-    selfchoice = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: selfrunOrNot, method: TrialHandler.Method.RANDOM,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'selfchoice'
-    });
-    psychoJS.experiment.addLoop(selfchoice); // add the loop to the experiment
-    currentLoop = selfchoice;  // we're now the current loop
-
-    // Schedule all the trials in the trialList:
-    for (const thisSelfchoice of selfchoice) {
-      snapshot = selfchoice.getSnapshot();
-      selfchoiceLoopScheduler.add(importConditions(snapshot));
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineBegin(snapshot));
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineEachFrame());
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineEnd(snapshot));
-      selfchoiceLoopScheduler.add(selfchoiceLoopEndIteration(selfchoiceLoopScheduler, snapshot));
-    }
-
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-async function selfchoiceLoopEnd() {
+async function WTPloopLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(selfchoice);
+  psychoJS.experiment.removeLoop(WTPloop);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -1481,37 +1449,7 @@ async function selfchoiceLoopEnd() {
 }
 
 
-function selfchoiceLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-async function lotteryloopLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(lotteryloop);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-
-function lotteryloopLoopEndIteration(scheduler, snapshot) {
+function WTPloopLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1528,8 +1466,9 @@ function lotteryloopLoopEndIteration(scheduler, snapshot) {
     return Scheduler.Event.NEXT;
     }
   };
-}
+]
 
+//  WTP ends here
 
 async function entiretaskloopLoopEnd() {
   // terminate loop
@@ -2265,9 +2204,9 @@ function feedbackRoutineBegin(snapshot) {
     fdbkimage_image.setImage(fdbkimage);
     // Run 'Begin Routine' code from initiatelottery_code
     if (((TrialNumber % 5) === 0)) {
-        startlottery = 1;
+        startWTP = 1;
     } else {
-        startlottery = 0;
+        startWTP = 0;
     }
 
     // keep track of which components have finished
@@ -2378,7 +2317,7 @@ function continuesharingRoutineBegin(snapshot) {
     sharenextphoto_key.rt = undefined;
     _sharenextphoto_key_allKeys = [];
     // Run 'Begin Routine' code from hidecontinuesharingroutine_code
-    if ((startlottery === 1)) {
+    if ((startWTP === 1)) {
         continueRoutine = false;
     } else {
         continueRoutine = true;
@@ -2684,31 +2623,11 @@ function ChoiceRoutineEnd(snapshot) {
 
 
 
-    // Run 'End Routine' code from setvariables_code
-    if ((choice_keys.keys === "c")) {
-        selfrunOrNot = 0;
-        comprunOrNot = 1;
-        playlottery = 0;
-        computer_text.setColor(new util.Color("white"));
-    } else {
-        if ((choice_keys.keys === "s")) {
-            selfrunOrNot = 1;
-            comprunOrNot = 0;
-            playlottery = 1;
-            self_text.setColor(new util.Color("white"));
-        } else {
-            selfrunOrNot = 0;
-            comprunOrNot = 0;
-            playlottery = 999;
-        }
-    }
-
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(choice_keys.corr, level);
     }
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
-    psychoJS.experiment.addData('playlottery', playlottery);
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
         }
@@ -3196,7 +3115,7 @@ function ContinueRoutineEnd(snapshot) {
   }
 }
 
-// insert stress slider here 
+// insert stress slider here
 var salienceratingtext;
 var _key_resp_allKeys;
 var SalienceRatingComponents;
