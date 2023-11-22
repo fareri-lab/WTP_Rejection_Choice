@@ -1466,7 +1466,7 @@ function WTPloopLoopEndIteration(scheduler, snapshot) {
     return Scheduler.Event.NEXT;
     }
   };
-]
+}
 
 //  WTP ends here
 
