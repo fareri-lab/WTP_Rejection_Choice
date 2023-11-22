@@ -1453,6 +1453,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   }
 }
 // insert wtp here
+var trial_nums;
 var WTPloop;
 var WTP_trial;
 function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
@@ -1469,8 +1470,8 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
     });
     psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
     currentLoop = WTPloop;  // we're now the current loop
-
     WTP_trial = WTPloop.getCurrentTrial();
+    console.log(WTP_trial);
     // Schedule all the trials in the trialList:
     for (const thisWTPloop of WTPloop) {
       snapshot = WTPloop.getSnapshot();
@@ -1486,40 +1487,6 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
       WTPloopLoopScheduler.add(ContinueRoutineEachFrame());
       WTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
       WTPloopLoopScheduler.add(WTPloopLoopEndIteration(WTPloopLoopScheduler, snapshot));
-    }
-
-    return Scheduler.Event.NEXT;
-  }
-}
-
-var trial_nums;
-var WTP_trials;
-function WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-
-    // set up handler to look after randomisation of conditions etc
-    WTP_trials = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'WTP_trials'
-    });
-    psychoJS.experiment.addLoop(WTP_trials); // add the loop to the experiment
-    currentLoop = WTP_trials;  // we're now the current loop
-    console.log(WTP_trials);
-    //list of trial numbers
-    trial_nums = list(range(1,51))
-    // Schedule all the trials in the trialList:
-    for (const thisWTP_trials of WTP_trials) {
-      snapshot = WTP_trials.getSnapshot();
-      WTP_trialsLoopScheduler.add(importConditions(snapshot));
-      //wtp trials
-      WTPloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
-      WTPloopLoopScheduler.add(ChoiceRoutineEachFrame());
-      WTPloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
-      WTP_trialsLoopScheduler.add(WTP_trialsLoopEndIteration(WTP_trialsLoopScheduler, snapshot));
     }
 
     return Scheduler.Event.NEXT;
