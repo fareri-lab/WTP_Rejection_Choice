@@ -1317,10 +1317,10 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(continuesharingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(continuesharingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(continuesharingRoutineEnd(snapshot));
-      const lotteryloopLoopScheduler = new Scheduler(psychoJS);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot));
-      entiretaskloopLoopScheduler.add(lotteryloopLoopScheduler);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopEnd);
+      const WTPloopLoopScheduler = new Scheduler(psychoJS);
+      entiretaskloopLoopScheduler.add(WTPloopLoopBegin(WTPloopLoopScheduler, snapshot));
+      entiretaskloopLoopScheduler.add(WTPloopLoopScheduler);
+      entiretaskloopLoopScheduler.add(WTPloopLoopEnd);
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEnd(snapshot));
