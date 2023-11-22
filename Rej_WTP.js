@@ -1479,13 +1479,13 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
       WTPloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
       WTPloopLoopScheduler.add(ChoiceRoutineEachFrame());
       WTPloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
-      const WTP_trialsLoopScheduler = new Scheduler(psychoJS);
-      WTPloopLoopScheduler.add(WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot));
-      WTPloopLoopScheduler.add(WTP_trialsLoopScheduler);
-      WTPloopLoopScheduler.add(WTP_trialsLoopEnd);
-      WTPloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
-      WTPloopLoopScheduler.add(ContinueRoutineEachFrame());
-      WTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
+      // const WTP_trialsLoopScheduler = new Scheduler(psychoJS);
+      // WTPloopLoopScheduler.add(WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot));
+      // WTPloopLoopScheduler.add(WTP_trialsLoopScheduler);
+      // WTPloopLoopScheduler.add(WTP_trialsLoopEnd);
+      // WTPloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
+      // WTPloopLoopScheduler.add(ContinueRoutineEachFrame());
+      // WTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
       WTPloopLoopScheduler.add(WTPloopLoopEndIteration(WTPloopLoopScheduler, snapshot));
     }
 
