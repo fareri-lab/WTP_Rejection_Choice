@@ -168,6 +168,7 @@ var Welcome;
 var endwelcomescreen_keys;
 var partnermatch;
 var partneravatar;
+var trialClock;
 var testClock;
 var First_InstructionsClock;
 var FirstInstructions;
