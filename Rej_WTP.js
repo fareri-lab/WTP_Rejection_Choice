@@ -296,6 +296,7 @@ var leftText1;
 var rightText1;
 var money3;
 var money4;
+var Instructions2;
 var ISI2Clock;
 var ISI2;
 var instructionsClock;
