@@ -100,36 +100,36 @@ psychoJS.start({
     {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
     {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
 
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpeg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpeg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpeg` ,}
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,}
 
 ]
 });
@@ -168,6 +168,7 @@ var Welcome;
 var endwelcomescreen_keys;
 var partnermatch;
 var partneravatar;
+var trialClock;
 var testClock;
 var First_InstructionsClock;
 var FirstInstructions;
@@ -280,7 +281,27 @@ var computer_choice;
 var selfrunOrNot;
 var comprunOrNot;
 var resumetext;
+//initiate wtp
 
+var ChoiceClock;
+var leftText;
+var rightText;
+var money1;
+var money2;
+var instruct_toptext;
+var ISIClock;
+var ISI;
+var social1Clock;
+var leftText1;
+var rightText1;
+var money3;
+var money4;
+var Instructions2;
+var ISI2Clock;
+var ISI2;
+var instructionsClock;
+var ty;
+var Q1Clock;
 
 async function experimentInit() {
   // Initialize components for Routine "Welcome_Screen"
@@ -940,6 +961,106 @@ end_screen = new visual.TextStim({
 }
 
 
+//instruction variables
+trialClock = new util.Clock();
+  Instructions2 = new visual.TextStim({
+   win: psychoJS.window,
+   name: 'Instructions',
+   text: "In this part of the task, you will be choosing between two options.\n\nPlease indicate which option you would prefer by using your keyboard to press '1' for the choice on the left, or '2' for the choice on the right. \n\n Each option is associated with a price, which will be subtracted from your earnings from the previous task upon making a selection. \n\n Press SPACE to continue.",
+   font: 'Arial',
+   units : undefined,
+   pos: [0, 0], height: 0.03,  wrapWidth: 1.5, ori: 0,
+   color: new util.Color('white'),  opacity: 1,
+   depth: 0.0
+ });
+
+ conditionalBlank = new visual.TextStim({
+   win: psychoJS.window,
+   name: 'conditionalconditionalBlank',
+   text: '',
+   font: 'Arial',
+   pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+   color: new util.Color('white'),  opacity: 1,
+   depth: -6.0
+ });
+
+
+ Inst3Clock = new util.Clock();
+ Instructions3 = new visual.TextStim({
+     win: psychoJS.window,
+     name: 'Instr2',
+     text: 'Imagine yourself actually doing the experiences shown on screen before making your decision.\n\nYou will have ten seconds to make a response after seeing the choices. \n\n When you make your choice, your selection will turn green. \n\n Press SPACE to continue to more instructions.',
+     font: 'Arial',
+     units : undefined,
+     pos: [0, 0], height: 0.03,  wrapWidth: 1.5, ori: 0,
+     color: new util.Color('white'),  opacity: 1,
+     depth: 0.0
+ });
+
+
+
+
+// WTP task variables
+// Initialize components for Routine "Choice"
+  ChoiceClock = new util.Clock();
+  //choice text shown on the left
+  leftText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'leftText',
+    text: 'default text',
+    font: 'Times New Roman',
+    units : undefined,
+    pos: [(- 0.4), 0.1], height: 0.04,  wrapWidth: 1, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: 0.0
+  });
+  //choice text shown on the right
+  rightText = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'rightText',
+    text: 'default text',
+    font: 'Times New Roman',
+    units : undefined,
+    pos: [0.4, 0.1], height: 0.04,  wrapWidth: 1, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -1.0
+  });
+//   money amounts on the left
+  money1 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'money1',
+    text: 'default text',
+    font: 'Arial',
+    units : undefined,
+    pos: [(- 0.4), (- 0.32)], height: 0.05,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -3.0
+  });
+  //money amounts on the right
+  money2 = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'money2',
+    text: 'default text',
+    font: 'Arial',
+    units : undefined,
+    pos: [(0.4), (- 0.32)], height: 0.05,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -4.0
+  });
+  // Initialize components for Routine "ISI"
+  ISIClock = new util.Clock();
+  ISI = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'ISI',
+    text: '+',
+    font: 'Arial',
+    units : undefined,
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: 0.0
+  });
+
+
 var t;
 var frameN;
 var continueRoutine;
@@ -1317,10 +1438,10 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(continuesharingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(continuesharingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(continuesharingRoutineEnd(snapshot));
-      const lotteryloopLoopScheduler = new Scheduler(psychoJS);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot));
-      entiretaskloopLoopScheduler.add(lotteryloopLoopScheduler);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopEnd);
+      const WTPloopLoopScheduler = new Scheduler(psychoJS);
+      entiretaskloopLoopScheduler.add(WTPloopLoopBegin(WTPloopLoopScheduler, snapshot));
+      entiretaskloopLoopScheduler.add(WTPloopLoopScheduler);
+      entiretaskloopLoopScheduler.add(WTPloopLoopEnd);
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEnd(snapshot));
@@ -1334,82 +1455,690 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   }
 }
 // insert wtp here
-var lotteryloop;
-function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
+var trial_nums;
+var WTPloop;
+var WTP_trial;
+function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-
+    
     // set up handler to look after randomisation of conditions etc
-    lotteryloop = new TrialHandler({
+    WTPloop = new TrialHandler({
       psychoJS: psychoJS,
       nReps: startWTP, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'lotteryloop'
+      trialList: 'WTP_csv',
+      seed: undefined, name: 'WTPloop'
     });
-    psychoJS.experiment.addLoop(lotteryloop); // add the loop to the experiment
-    currentLoop = lotteryloop;  // we're now the current loop
-
+    psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
+    currentLoop = WTPloop;  // we're now the current loop
+    WTP_trial = WTPloop.getCurrentTrial();
+    console.log(WTP_trial);
     // Schedule all the trials in the trialList:
-    for (const thisLotteryloop of lotteryloop) {
-      snapshot = lotteryloop.getSnapshot();
-      lotteryloopLoopScheduler.add(importConditions(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
-      const computerchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(computerchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(computerchoiceLoopEnd);
-      const selfchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(selfchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(selfchoiceLoopEnd);
-      lotteryloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ContinueRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
-      lotteryloopLoopScheduler.add(lotteryloopLoopEndIteration(lotteryloopLoopScheduler, snapshot));
+    for (const thisWTPloop of WTPloop) {
+      snapshot = WTPloop.getSnapshot();
+      WTPloopLoopScheduler.add(importConditions(snapshot));
+      WTPloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
+      WTPloopLoopScheduler.add(ChoiceRoutineEachFrame());
+      WTPloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
+      // const WTP_trialsLoopScheduler = new Scheduler(psychoJS);
+      // WTPloopLoopScheduler.add(WTP_trialsLoopBegin(WTP_trialsLoopScheduler, snapshot));
+      // WTPloopLoopScheduler.add(WTP_trialsLoopScheduler);
+      // WTPloopLoopScheduler.add(WTP_trialsLoopEnd);
+      // WTPloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
+      // WTPloopLoopScheduler.add(ContinueRoutineEachFrame());
+      // WTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
+      WTPloopLoopScheduler.add(WTPloopLoopEndIteration(WTPloopLoopScheduler, snapshot));
     }
 
     return Scheduler.Event.NEXT;
   }
 }
+// Choice Routine goes there
 
 
-var computerchoice;
-function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+var responses;
+var continueRoutine;
+var theseKeys;
+var ChoiceComponents;
+function ChoiceRoutineBegin() {
+  //------Prepare to start Routine 'Choice'-------
+  let continueRoutine = true;
+  t = 0;
+  conditionalBlank.setText('');
+  ChoiceClock.reset(); // clock
+  frameN = -1;
 
-    // set up handler to look after randomisation of conditions etc
-    computerchoice = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: comprunOrNot, method: TrialHandler.Method.RANDOM,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'computerchoice'
-    });
-    psychoJS.experiment.addLoop(computerchoice); // add the loop to the experiment
-    currentLoop = computerchoice;  // we're now the current loop
+  // update component parameters for each repeat
+  //uses conditions from spreadsheet to setText
+  leftText.setText(Left);
+  rightText.setText(Right);
+  instruct_toptext.setText("Press '1' for left option\n\nPress '2' for right option");
+  money1.setText("$" + leftmoney);
+  money2.setText("$" + rightmoney);
+  // create key response
+  responses = new core.BuilderKeyResponse(psychoJS);
 
-    // Schedule all the trials in the trialList:
-    for (const thisComputerchoice of computerchoice) {
-      snapshot = computerchoice.getSnapshot();
-      computerchoiceLoopScheduler.add(importConditions(snapshot));
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineBegin(snapshot));
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineEachFrame());
-      computerchoiceLoopScheduler.add(LotterycomputerchoiceRoutineEnd(snapshot));
-      computerchoiceLoopScheduler.add(computerchoiceLoopEndIteration(computerchoiceLoopScheduler, snapshot));
+
+  // keep track of which components have finished
+  ChoiceComponents = [];
+  ChoiceComponents.push(leftText);
+  ChoiceComponents.push(rightText);
+  ChoiceComponents.push(responses);
+  ChoiceComponents.push(money1);
+  ChoiceComponents.push(money2);
+  ChoiceComponents.push(instruct_toptext);
+  ChoiceComponents.push(conditionalBlank);
+
+ //if the components have a status function, say that it has not started yet and go to the next event
+  for (const thisComponent of ChoiceComponents)
+    if ('status' in thisComponent)
+      thisComponent.status = PsychoJS.Status.NOT_STARTED;
+
+  return Scheduler.Event.NEXT;
+}
+
+var continueRoutine;
+var frameRemains;
+var t;
+function ChoiceRoutineEachFrame() {
+  //------Loop for each frame of Routine 'Choice'-------
+  let continueRoutine = true; // until we're told otherwise
+  // get current time
+  t = ChoiceClock.getTime();
+  frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+  // update/draw components on each frame
+
+  //show reminder at the top
+  if (t >= 0.0 && instruct_toptext.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    instruct_toptext.tStart = t;  // (not accounting for frame time here)
+    instruct_toptext.frameNStart = frameN;  // exact frame index
+    instruct_toptext.setAutoDraw(true);
+  }
+
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (instruct_toptext.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    instruct_toptext.setAutoDraw(false);
+    continueRoutine = false;
+  }
+
+  // *leftText* updates, draw left text
+  if (t >= 0.0 && leftText.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    leftText.tStart = t;  // (not accounting for frame time here)
+    leftText.frameNStart = frameN;  // exact frame index
+    leftText.setAutoDraw(true);
+
+  }
+//after 10 seconds take it away
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (leftText.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    leftText.setAutoDraw(false);
+    continueRoutine = false;
+  }
+
+  // *rightText* updates, draw right text
+  if (t >= 0.0 && rightText.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    rightText.tStart = t;  // (not accounting for frame time here)
+    rightText.frameNStart = frameN;  // exact frame index
+    rightText.setAutoDraw(true);
+
+  }
+//after 10 seconds take it away
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (rightText.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    rightText.setAutoDraw(false);
+    continueRoutine = false;
+  }
+
+  // *responses* updates, let them respond with keyboard
+
+
+  // *money1* updates, draw left money
+  if (t >= 0.0 && money1.status == PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    money1.tStart = t;  // (not accounting for frame time here)
+    money1.frameNStart = frameN;  // exact frame index
+    money1.setAutoDraw(true);
+  }
+//show for 4 seconds then take off screen
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (money1.status == PsychoJS.Status.STARTED && t >= frameRemains) {
+    money1.setAutoDraw(false);
+    continueRoutine = false;
+  }
+
+  // *money2* updates. draw right money
+  if (t >= 0.0 && money2.status == PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    money2.tStart = t;  // (not accounting for frame time here)
+    money2.frameNStart = frameN;  // exact frame index
+    money2.setAutoDraw(true);
+  }
+
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (money2.status == PsychoJS.Status.STARTED && t >= frameRemains) {
+    money2.setAutoDraw(false);
+    continueRoutine = false;
+  }
+
+
+   if (t >= 0.0 && responses.status === PsychoJS.Status.NOT_STARTED) {
+     // keep track of start time/frame for later
+     responses.tStart = t;  // (not accounting for frame time here)
+     responses.frameNStart = frameN;  // exact frame index
+     responses.status = PsychoJS.Status.STARTED;
+     // keyboard checking is just starting
+     psychoJS.window.callOnFlip(function() { responses.clock.reset(); }); // t = 0 on screen flip
+     psychoJS.eventManager.clearEvents({eventType:'keyboard'});
+   }
+
+   //after 10 seconds, they can't respond
+   frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+   if (responses.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+     responses.status = PsychoJS.Status.FINISHED;
+     continueRoutine = false;
+   }
+
+
+
+  //get keys that they chose
+   if (responses.status === PsychoJS.Status.STARTED) {
+     let theseKeys = psychoJS.eventManager.getKeys({keyList:['1', '2']});
+     if (theseKeys.length > 0) {  // at least one key was pressed
+       responses.keys = theseKeys[theseKeys.length-1];  // just the last key pressed
+       responses.rt = responses.clock.getTime();
+      }
+     // check for quit:
+     if (theseKeys.indexOf('escape') > -1) {
+       psychoJS.experiment.experimentEnded = true;
+     }
+
+
+   }
+
+   if (responses.keys.length > 0){
+        responses.status = PsychoJS.Status.FINISHED; //don't allow more than one response
+
     }
 
+    if (responses.keys === '1') {
+       leftText.setColor(new util.Color("green"));
+       money1.setColor(new util.Color("green"));
+
+
+
+    //if they pressed 2, make right text green
+  } else if (responses.keys === '2') {
+       rightText.setColor(new util.Color("green"));
+       money2.setColor(new util.Color("green"));
+          }
+
+    // *conditionalBlank* updates
+    if (responses.keys.length > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      conditionalBlank.tStart = t;  // (not accounting for frame time here)
+      conditionalBlank.frameNStart = frameN;  // exact frame index
+      conditionalBlank.setAutoDraw(true);
+    }
+
+    if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
+      conditionalBlank.setAutoDraw(false);
+    }
+
+    if (conditionalBlank.status == PsychoJS.Status.FINISHED){
+       leftText.setAutoDraw(false);
+       money1.setAutoDraw(false);
+       rightText.setAutoDraw(false);
+       money2.setAutoDraw(false);
+       continueRoutine = false;
+     }
+
+  // check for quit (typically the Esc key)
+  if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+    return psychoJS.quit('The [Escape] key was pressed. Goodbye!', false);
+  }
+
+  // check if the Routine should terminate
+  if (!continueRoutine) {  // a component has requested a forced-end of Routine
+    return Scheduler.Event.NEXT;
+  }
+
+  continueRoutine = false;  // reverts to True if at least one component still running
+  for (const thisComponent of ChoiceComponents)
+    if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+      continueRoutine = true;
+      break;
+    }
+
+  // refresh the screen if continuing
+  if (continueRoutine) {
+    return Scheduler.Event.FLIP_REPEAT;
+  }
+  else {
+    return Scheduler.Event.NEXT;
+  }
+}
+
+var subtract_bonus;
+function ChoiceRoutineEnd() {
+  //------Ending Routine 'Choice'-------
+  for (const thisComponent of ChoiceComponents) {
+    if (typeof thisComponent.setAutoDraw === 'function') {
+      thisComponent.setAutoDraw(false);
+    }
+  }
+
+  // check responses
+  if (responses.keys === undefined || responses.keys.length === 0) {    // No response was made
+      responses.keys = undefined;
+  }
+
+  if (responses.keys === '1'){
+    psychoJS.experiment.addData('decision_price', leftmoney);
+    subtract_bonus =  subtract_bonus + leftmoney;
+    //psychoJS.experiment.addData('bonus_total', All_Bonus);
+  } else if (responses.keys === '2') {
+    psychoJS.experiment.addData('decision_price', rightmoney);
+    subtract_bonus =  subtract_bonus + rightmoney;
+  //  psychoJS.experiment.addData('bonus_total', All_Bonus);
+          }
+  psychoJS.experiment.addData('responses.keys', responses.keys);
+  if (typeof responses.keys !== 'undefined') {  // we had a response
+      psychoJS.experiment.addData('responses.rt', responses.rt);
+      }
+
+  // the Routine "Choice" was not non-slip safe, so reset the non-slip timer
+
+//   reset text color for next trial
+  leftText.setColor(new util.Color("white"));
+  rightText.setColor(new util.Color("white"));
+  money1.setColor(new util.Color("white"));
+  money2.setColor(new util.Color("white"));
+
+
+  routineTimer.reset();
+
+  return Scheduler.Event.NEXT;
+}
+
+var ISIComponents;
+function ISIRoutineBegin() {
+  //------Prepare to start Routine 'ISI'-------
+  t = 0;
+  ISIClock.reset(); // clock
+  frameN = -1;
+  routineTimer.add(1.000000);
+  // update component parameters for each repeat
+  // keep track of which components have finished
+  ISIComponents = [];
+  ISIComponents.push(ISI);
+
+  for (const thisComponent of ISIComponents)
+    if ('status' in thisComponent)
+      thisComponent.status = PsychoJS.Status.NOT_STARTED;
+
+  return Scheduler.Event.NEXT;
+}
+
+
+function ISIRoutineEachFrame() {
+  //------Loop for each frame of Routine 'ISI'-------
+  let continueRoutine = true; // until we're told otherwise
+  // get current time
+  t = ISIClock.getTime();
+  frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+  // update/draw components on each frame
+
+  // *ISI* updates, draw the fixation cross
+  if (t >= 0.0 && ISI.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    ISI.tStart = t;  // (not accounting for frame time here)
+    ISI.frameNStart = frameN;  // exact frame index
+    ISI.setAutoDraw(true);
+  }
+// show for 2 seconds then take off screen
+  frameRemains = 0.0 + 2.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (ISI.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    ISI.setAutoDraw(false);
+  }
+  // check for quit (typically the Esc key)
+  if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+    return psychoJS.quit('The [Escape] key was pressed. Goodbye!', false);
+  }
+
+  // check if the Routine should terminate
+  if (!continueRoutine) {  // a component has requested a forced-end of Routine
+    return Scheduler.Event.NEXT;
+  }
+
+  continueRoutine = false;  // reverts to True if at least one component still running
+  for (const thisComponent of ISIComponents)
+    if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+      continueRoutine = true;
+      break;
+    }
+
+  // refresh the screen if continuing
+  if (continueRoutine && routineTimer.getTime() > 0) {
+    return Scheduler.Event.FLIP_REPEAT;
+  }
+  else {
     return Scheduler.Event.NEXT;
   }
 }
 
 
-async function computerchoiceLoopEnd() {
+function ISIRoutineEnd() {
+  //------Ending Routine 'ISI'-------
+  for (const thisComponent of ISIComponents) {
+    if (typeof thisComponent.setAutoDraw === 'function') {
+      thisComponent.setAutoDraw(false);
+    }
+  }
+  return Scheduler.Event.NEXT;
+}
+
+var response1;
+var social1Components;
+function social1RoutineBegin() {
+  //------Prepare to start Routine 'social1'-------
+  t = 0;
+  social1Clock.reset(); // clock
+  frameN = -1;
+  // update component parameters for each repeat
+//   set text conditions for social vs social
+  leftText1.setText(Left1);
+  rightText1.setText(Right1);
+  response1 = new core.BuilderKeyResponse(psychoJS);
+
+  money3.setText("$" + leftmoney1);
+  money4.setText("$" + rightmoney1);
+
+  // keep track of which components have finished
+  social1Components = [];
+  social1Components.push(leftText1);
+  social1Components.push(rightText1);
+  social1Components.push(response1);
+  social1Components.push(money3);
+  social1Components.push(money4);
+
+
+  for (const thisComponent of social1Components)
+    if ('status' in thisComponent)
+      thisComponent.status = PsychoJS.Status.NOT_STARTED;
+
+  return Scheduler.Event.NEXT;
+}
+
+
+function social1RoutineEachFrame() {
+  //------Loop for each frame of Routine 'social1'-------
+  let continueRoutine = true; // until we're told otherwise
+  // get current time
+  t = social1Clock.getTime();
+  frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+  // update/draw components on each frame
+
+  // *leftText1* updates, draw left text
+  if (t >= 0.0 && leftText1.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    leftText1.tStart = t;  // (not accounting for frame time here)
+    leftText1.frameNStart = frameN;  // exact frame index
+    leftText1.setAutoDraw(true);
+  }
+// show for 4 seconds then take off screen
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (leftText1.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    leftText1.setAutoDraw(false);
+  }
+
+  // *rightText1* updates, draw right text
+  if (t >= 0.0 && rightText1.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    rightText1.tStart = t;  // (not accounting for frame time here)
+    rightText1.frameNStart = frameN;  // exact frame index
+    rightText1.setAutoDraw(true);
+  }
+// show for 4 seconds then take off screen
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (rightText1.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    rightText1.setAutoDraw(false);
+  }
+
+  // *response1* updates
+  if (t >= 0.0 && response1.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    response1.tStart = t;  // (not accounting for frame time here)
+    response1.frameNStart = frameN;  // exact frame index
+    response1.status = PsychoJS.Status.STARTED;
+    // keyboard checking is just starting
+    psychoJS.window.callOnFlip(function() { response1.clock.reset(); }); // t = 0 on screen flip
+    psychoJS.eventManager.clearEvents({eventType:'keyboard'});
+  }
+// allowed to respond within 4 seconds then they cannot respond
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (response1.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    response1.status = PsychoJS.Status.FINISHED;
+  }
+// get chosen keys
+  if (response1.status === PsychoJS.Status.STARTED) {
+    let theseKeys = psychoJS.eventManager.getKeys({keyList:['1', '2']});
+
+    // check for quit:
+    if (theseKeys.indexOf('escape') > -1) {
+      psychoJS.experiment.experimentEnded = true;
+    }
+
+    if (theseKeys.length > 0) {  // at least one key was pressed
+      response1.keys = theseKeys[theseKeys.length-1];  // just the last key pressed
+      response1.rt = response1.clock.getTime();
+      // was this 'correct'?
+      if (response1.keys == '') {
+          response1.corr = 1;
+      } else {
+          response1.corr = 0;
+      }
+    }
+  }
+  if (response1.keys.length > 0) {
+     response1.status = PsychoJS.Status.FINISHED;
+   }
+
+  // *money3* updates, draw left money
+  if (t >= 0.0 && money3.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    money3.tStart = t;  // (not accounting for frame time here)
+    money3.frameNStart = frameN;  // exact frame index
+    money3.setAutoDraw(true);
+  }
+// show for 4 seconds
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (money3.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    money3.setAutoDraw(false);
+  }
+
+  // *money4* updates, draw right money
+  if (t >= 0.0 && money4.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    money4.tStart = t;  // (not accounting for frame time here)
+    money4.frameNStart = frameN;  // exact frame index
+    money4.setAutoDraw(true);
+  }
+// show for 4 seconds
+  frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (money4.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    money4.setAutoDraw(false);
+  }
+//   if they pressed 1, make text green
+  if (response1.keys == '1') {
+    leftText1.setColor(new util.Color("green"));
+    money3.setColor(new util.Color("green"));
+
+  }
+
+//   if they pressed 2, make text green
+  if (response1.keys == '2') {
+    rightText1.setColor(new util.Color("green"));
+    money4.setColor(new util.Color("green"));
+
+  }
+
+  // check for quit (typically the Esc key)
+  if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+    return psychoJS.quit('The [Escape] key was pressed. Goodbye!', false);
+  }
+
+  // check if the Routine should terminate
+  if (!continueRoutine) {  // a component has requested a forced-end of Routine
+    return Scheduler.Event.NEXT;
+  }
+
+  continueRoutine = false;  // reverts to True if at least one component still running
+  for (const thisComponent of social1Components)
+    if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+      continueRoutine = true;
+      break;
+    }
+
+  // refresh the screen if continuing
+  if (continueRoutine) {
+    return Scheduler.Event.FLIP_REPEAT;
+  }
+  else {
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function social1RoutineEnd() {
+  //------Ending Routine 'social1'-------
+  for (const thisComponent of social1Components) {
+    if (typeof thisComponent.setAutoDraw === 'function') {
+      thisComponent.setAutoDraw(false);
+    }
+  }
+
+  // check responses
+  if (response1.keys === undefined || response1.keys.length === 0) {    // No response was made
+      response1.keys = undefined;
+  }
+
+  // was no response the correct answer?!
+  if (response1.keys === undefined) {
+    if (['None','none',undefined].includes('')) {
+       response1.corr = 1  // correct non-response
+    } else {
+       response1.corr = 0  // failed to respond (incorrectly)
+    }
+  }
+  // store data for thisExp (ExperimentHandler)
+  psychoJS.experiment.addData('response1.keys', response1.keys);
+  psychoJS.experiment.addData('response1.corr', response1.corr);
+  if (typeof response1.keys !== 'undefined') {  // we had a response
+      psychoJS.experiment.addData('response1.rt', response1.rt);
+      }
+
+  // the Routine "social1" was not non-slip safe, so reset the non-slip timer
+  routineTimer.reset();
+
+//   reset text color so it won't stay green for next trial
+  leftText1.setColor(new util.Color("white"));
+  rightText1.setColor(new util.Color("white"));
+  money3.setColor(new util.Color("white"));
+  money4.setColor(new util.Color("white"));
+
+
+  return Scheduler.Event.NEXT;
+}
+
+var ISI2Components;
+function ISI2RoutineBegin() {
+  //------Prepare to start Routine 'ISI2'-------
+  t = 0;
+  ISI2Clock.reset(); // clock
+  frameN = -1;
+  routineTimer.add(1.000000);
+  // update component parameters for each repeat
+  // keep track of which components have finished
+  ISI2Components = [];
+  ISI2Components.push(ISI2);
+
+  for (const thisComponent of ISI2Components)
+    if ('status' in thisComponent)
+      thisComponent.status = PsychoJS.Status.NOT_STARTED;
+
+  return Scheduler.Event.NEXT;
+}
+
+
+function ISI2RoutineEachFrame() {
+  //------Loop for each frame of Routine 'ISI2'-------
+  let continueRoutine = true; // until we're told otherwise
+  // get current time
+  t = ISI2Clock.getTime();
+  frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+  // update/draw components on each frame
+
+  // display fixation cross for 2 seconds
+  if (t >= 0.0 && ISI2.status === PsychoJS.Status.NOT_STARTED) {
+    // keep track of start time/frame for later
+    ISI2.tStart = t;  // (not accounting for frame time here)
+    ISI2.frameNStart = frameN;  // exact frame index
+    ISI2.setAutoDraw(true);
+  }
+
+  frameRemains = 0.0 + 2.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  if (ISI2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    ISI2.setAutoDraw(false);
+  }
+  // check for quit (typically the Esc key)
+  if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+    return psychoJS.quit('The [Escape] key was pressed. Goodbye!', false);
+  }
+
+  // check if the Routine should terminate
+  if (!continueRoutine) {  // a component has requested a forced-end of Routine
+    return Scheduler.Event.NEXT;
+  }
+
+  continueRoutine = false;  // reverts to True if at least one component still running
+  for (const thisComponent of ISI2Components)
+    if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+      continueRoutine = true;
+      break;
+    }
+
+  // refresh the screen if continuing
+  if (continueRoutine && routineTimer.getTime() > 0) {
+    return Scheduler.Event.FLIP_REPEAT;
+  }
+  else {
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function ISI2RoutineEnd() {
+  //------Ending Routine 'ISI2'-------
+  for (const thisComponent of ISI2Components) {
+    if (typeof thisComponent.setAutoDraw === 'function') {
+      thisComponent.setAutoDraw(false);
+    }
+  }
+  return Scheduler.Event.NEXT;
+}
+
+
+
+
+//end loop
+
+async function WTP_trialsLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(computerchoice);
+  psychoJS.experiment.removeLoop(WTP_trials);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -1419,7 +2148,7 @@ async function computerchoiceLoopEnd() {
 }
 
 
-function computerchoiceLoopEndIteration(scheduler, snapshot) {
+function WTP_trialsLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1437,40 +2166,9 @@ function computerchoiceLoopEndIteration(scheduler, snapshot) {
 }
 
 
-var selfchoice;
-function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-
-    // set up handler to look after randomisation of conditions etc
-    selfchoice = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: selfrunOrNot, method: TrialHandler.Method.RANDOM,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: undefined,
-      seed: undefined, name: 'selfchoice'
-    });
-    psychoJS.experiment.addLoop(selfchoice); // add the loop to the experiment
-    currentLoop = selfchoice;  // we're now the current loop
-
-    // Schedule all the trials in the trialList:
-    for (const thisSelfchoice of selfchoice) {
-      snapshot = selfchoice.getSnapshot();
-      selfchoiceLoopScheduler.add(importConditions(snapshot));
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineBegin(snapshot));
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineEachFrame());
-      selfchoiceLoopScheduler.add(LotteryselfchoiceRoutineEnd(snapshot));
-      selfchoiceLoopScheduler.add(selfchoiceLoopEndIteration(selfchoiceLoopScheduler, snapshot));
-    }
-
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-async function selfchoiceLoopEnd() {
+async function WTPloopLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(selfchoice);
+  psychoJS.experiment.removeLoop(WTPloop);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -1480,37 +2178,7 @@ async function selfchoiceLoopEnd() {
 }
 
 
-function selfchoiceLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-async function lotteryloopLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(lotteryloop);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-
-function lotteryloopLoopEndIteration(scheduler, snapshot) {
+function WTPloopLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1528,6 +2196,8 @@ function lotteryloopLoopEndIteration(scheduler, snapshot) {
     }
   };
 }
+
+
 //  WTP ends here
 
 async function entiretaskloopLoopEnd() {
@@ -2494,686 +3164,6 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
-
-var _choice_keys_allKeys;
-var ChoiceComponents;
-function ChoiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-
-    //--- Prepare to start Routine 'Choice' ---
-    t = 0;
-    conditionalBlank.setText('');
-    ChoiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    routineTimer.add(4.000000);
-    // update component parameters for each repeat
-    choice_keys.keys = undefined;
-    choice_keys.rt = undefined;
-    _choice_keys_allKeys = [];
-    // keep track of which components have finished
-    ChoiceComponents = [];
-    ChoiceComponents.push(lotterychoice_text);
-    ChoiceComponents.push(computer_text);
-    ChoiceComponents.push(self_text);
-    ChoiceComponents.push(conditionalBlank);
-    ChoiceComponents.push(choice_keys);
-
-    for (const thisComponent of ChoiceComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-var random_entry;
-var DecisionColor;
-function ChoiceRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Choice' ---
-    // get current time
-    t = ChoiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-
-    // *lotterychoice_text* updates
-    if (t >= 0.0 && lotterychoice_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      lotterychoice_text.tStart = t;  // (not accounting for frame time here)
-      lotterychoice_text.frameNStart = frameN;  // exact frame index
-
-      lotterychoice_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (lotterychoice_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      lotterychoice_text.setAutoDraw(false);
-    }
-
-    // *computer_text* updates
-    if (t >= 0.0 && computer_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      computer_text.tStart = t;  // (not accounting for frame time here)
-      computer_text.frameNStart = frameN;  // exact frame index
-
-      computer_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (computer_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      computer_text.setAutoDraw(false);
-    }
-
-    // *self_text* updates
-    if (t >= 0.0 && self_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      self_text.tStart = t;  // (not accounting for frame time here)
-      self_text.frameNStart = frameN;  // exact frame index
-
-      self_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (self_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      self_text.setAutoDraw(false);
-    }
-    // Run 'Each Frame' code from setvariables_code
-    var random_item;
-    random_item = Math.floor(Math.random() * computer_choice.length);
-    random_entry = computer_choice[random_item]
-
-
-
-
-    // *choice_keys* updates
-    if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      choice_keys.tStart = t;  // (not accounting for frame time here)
-      choice_keys.frameNStart = frameN;  // exact frame index
-
-      // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
-    }
-
-    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      choice_keys.status = PsychoJS.Status.FINISHED;
-  }
-
-    if (choice_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
-      _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
-      if (_choice_keys_allKeys.length > 0) {
-        choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
-        choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
-      }
-    }
-    DecisionColor = "cornflowerblue";
-    if ((choice_keys.keys === "c")) {
-        computer_text.setColor(new util.Color(DecisionColor));
-
-
-
-    } else {
-        if ((choice_keys.keys === "s")) {
-            self_text.setColor(new util.Color(DecisionColor));
-      }
-
-      // *conditionalBlank* updates
-      if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
-        // keep track of start time/frame for later
-        conditionalBlank.tStart = t;  // (not accounting for frame time here)
-        conditionalBlank.frameNStart = frameN;  // exact frame index
-        conditionalBlank.setAutoDraw(true);
-      }
-
-      if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
-      conditionalBlank.setAutoDraw(false);
-      }
-
-    //   show the response for 2 seconds, then move on to next trial
-      if (conditionalBlank.status == PsychoJS.Status.FINISHED){
-         self_text.setAutoDraw(false);
-         computer_text.setAutoDraw(false);
-         lotterychoice_text.setAutoDraw(false);
-
-         continueRoutine = false;
-       }
-
-    }
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-
-    continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of ChoiceComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
-
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-function ChoiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Choice' ---
-    for (const thisComponent of ChoiceComponents) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    }
-
-
-
-    // update the trial handler
-    if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(choice_keys.corr, level);
-    }
-    psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
-    if (typeof choice_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
-        }
-
-    choice_keys.stop();
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-var LotterycomputerchoiceComponents;
-function LotterycomputerchoiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-
-    //--- Prepare to start Routine 'Lotterycomputerchoice' ---
-    t = 0;
-    LotterycomputerchoiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    routineTimer.add(4.000000);
-    // update component parameters for each repeat
-    // Run 'Begin Routine' code from skipcomputerchoice_code
-    response_msg = `The computer has chosen ${random_entry}.`;
-
-    computerresponse.setText(response_msg);
-    // keep track of which components have finished
-    LotterycomputerchoiceComponents = [];
-    LotterycomputerchoiceComponents.push(lotterycard);
-    LotterycomputerchoiceComponents.push(Block1_facedowncard);
-    LotterycomputerchoiceComponents.push(computerresponse);
-
-    for (const thisComponent of LotterycomputerchoiceComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-function LotterycomputerchoiceRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Lotterycomputerchoice' ---
-    // get current time
-    t = LotterycomputerchoiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-
-    // *lotterycard* updates
-    if (t >= 0.0 && lotterycard.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      lotterycard.tStart = t;  // (not accounting for frame time here)
-      lotterycard.frameNStart = frameN;  // exact frame index
-
-      lotterycard.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (lotterycard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      lotterycard.setAutoDraw(false);
-    }
-
-    // *Block1_facedowncard* updates
-    if (t >= 0.0 && Block1_facedowncard.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Block1_facedowncard.tStart = t;  // (not accounting for frame time here)
-      Block1_facedowncard.frameNStart = frameN;  // exact frame index
-
-      Block1_facedowncard.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Block1_facedowncard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Block1_facedowncard.setAutoDraw(false);
-    }
-
-    // *computerresponse* updates
-    if (t >= 1 && computerresponse.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      computerresponse.tStart = t;  // (not accounting for frame time here)
-      computerresponse.frameNStart = frameN;  // exact frame index
-
-      computerresponse.setAutoDraw(true);
-    }
-
-    frameRemains = 2 + 2 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (computerresponse.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      computerresponse.setAutoDraw(false);
-    }
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-
-    continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of LotterycomputerchoiceComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
-
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-function LotterycomputerchoiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Lotterycomputerchoice' ---
-    for (const thisComponent of LotterycomputerchoiceComponents) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    }
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-var _lotteryguess_keys_allKeys;
-var LotteryselfchoiceComponents;
-function LotteryselfchoiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-
-    //--- Prepare to start Routine 'Lotteryselfchoice' ---
-    t = 0;
-    LotteryselfchoiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    routineTimer.add(8.000000);
-    // update component parameters for each repeat
-    // Run 'Begin Routine' code from skipselfchoice_code_2
-    /* Syntax Error: Fix Python code */
-    lotteryguess_keys.keys = undefined;
-    lotteryguess_keys.rt = undefined;
-    _lotteryguess_keys_allKeys = [];
-    responsefeedback.setText(feedback_msg);
-    // keep track of which components have finished
-    LotteryselfchoiceComponents = [];
-    LotteryselfchoiceComponents.push(pickacard_text);
-    LotteryselfchoiceComponents.push(higher_text);
-    LotteryselfchoiceComponents.push(lower_text);
-    LotteryselfchoiceComponents.push(lotteryguess_keys);
-    LotteryselfchoiceComponents.push(responsefeedback);
-    LotteryselfchoiceComponents.push(block1_cardimage);
-
-    for (const thisComponent of LotteryselfchoiceComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
-
-var DecisionColor;
-function LotteryselfchoiceRoutineEachFrame() {
-  return async function () {
-    DecisionColor = "cornflowerblue";
-    //--- Loop for each frame of Routine 'Lotteryselfchoice' ---
-    // get current time
-    t = LotteryselfchoiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-
-    // *pickacard_text* updates
-    if (t >= 0.0 && pickacard_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      pickacard_text.tStart = t;  // (not accounting for frame time here)
-      pickacard_text.frameNStart = frameN;  // exact frame index
-
-      pickacard_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (pickacard_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      pickacard_text.setAutoDraw(false);
-    }
-
-    // *higher_text* updates
-    if (t >= 0.0 && higher_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      higher_text.tStart = t;  // (not accounting for frame time here)
-      higher_text.frameNStart = frameN;  // exact frame index
-
-      higher_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (higher_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      higher_text.setAutoDraw(false);
-    }
-
-    // *lower_text* updates
-    if (t >= 0.0 && lower_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      lower_text.tStart = t;  // (not accounting for frame time here)
-      lower_text.frameNStart = frameN;  // exact frame index
-
-      lower_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (lower_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      lower_text.setAutoDraw(false);
-    }
-
-    // *lotteryguess_keys* updates
-    if (t >= 0 && lotteryguess_keys.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      lotteryguess_keys.tStart = t;  // (not accounting for frame time here)
-      lotteryguess_keys.frameNStart = frameN;  // exact frame index
-
-      // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { lotteryguess_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { lotteryguess_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { lotteryguess_keys.clearEvents(); });
-    }
-
-    frameRemains = 0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (lotteryguess_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      lotteryguess_keys.status = PsychoJS.Status.FINISHED;
-  }
-
-    if (lotteryguess_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = lotteryguess_keys.getKeys({keyList: ['h', 'l'], waitRelease: false});
-      _lotteryguess_keys_allKeys = _lotteryguess_keys_allKeys.concat(theseKeys);
-      if (_lotteryguess_keys_allKeys.length > 0) {
-        lotteryguess_keys.keys = _lotteryguess_keys_allKeys[0].name;  // just the first key pressed
-        lotteryguess_keys.rt = _lotteryguess_keys_allKeys[0].rt;
-      }
-    }
-
-    // Run 'Each Frame' code from displaylotterychoice_code
-    if ((lotteryguess_keys.keys === "l")) {
-        feedback_msg = `You have chosen lower.`;
-        lower_text.setColor(new util.Color(DecisionColor));
-    } else {
-        if ((lotteryguess_keys.keys === "h")) {
-            feedback_msg = `You have chosen higher.`;
-            higher_text.setColor(new util.Color(DecisionColor));
-        } else {
-            feedback_msg = `No response recorded.`;
-        }
-    }
-    responsefeedback.setText(feedback_msg);
-
-
-    // *responsefeedback* updates
-    if (t >= 4 && responsefeedback.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      responsefeedback.tStart = t;  // (not accounting for frame time here)
-      responsefeedback.frameNStart = frameN;  // exact frame index
-
-      responsefeedback.setAutoDraw(true);
-    }
-
-    frameRemains = 4 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (responsefeedback.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      responsefeedback.setAutoDraw(false);
-    }
-
-    // *block1_cardimage* updates
-    if (t >= 0.0 && block1_cardimage.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      block1_cardimage.tStart = t;  // (not accounting for frame time here)
-      block1_cardimage.frameNStart = frameN;  // exact frame index
-
-      block1_cardimage.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (block1_cardimage.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      block1_cardimage.setAutoDraw(false);
-    }
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-
-    continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of LotteryselfchoiceComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
-
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-function LotteryselfchoiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Lotteryselfchoice' ---
-    for (const thisComponent of LotteryselfchoiceComponents) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    }
-    // update the trial handler
-    if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(lotteryguess_keys.corr, level);
-    }
-    psychoJS.experiment.addData('lotteryguess_keys.keys', lotteryguess_keys.keys);
-    if (typeof lotteryguess_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('lotteryguess_keys.rt', lotteryguess_keys.rt);
-        }
-
-    computer_text.setColor(new util.Color("white"));
-    self_text.setColor(new util.Color("white"));
-    higher_text.setColor(new util.Color("white"));
-    lower_text.setColor(new util.Color("white"));
-    lotteryguess_keys.stop();
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-var _resumeafterlottery_keys_allKeys;
-var ContinueComponents;
-function ContinueRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-
-    //--- Prepare to start Routine 'Continue' ---
-    t = 0;
-    ContinueClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    // update component parameters for each repeat
-    // Run 'Begin Routine' code from code
-    // if (((TrialNumber % 30) === 0)) {
-    //     continueRoutine = false
-    // }
-    if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
-        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please be sure to respond faster on your next opportunity. \n\nPress space to continue.";
-    } else {
-        resumetext = "Press space to continue.";
-    }
-
-    resumeafterlottery_keys.keys = undefined;
-    resumeafterlottery_keys.rt = undefined;
-    _resumeafterlottery_keys_allKeys = [];
-    resumetext_text.setText(resumetext);
-    // keep track of which components have finished
-    ContinueComponents = [];
-    ContinueComponents.push(resumeafterlottery_keys);
-    ContinueComponents.push(resumetext_text);
-
-    for (const thisComponent of ContinueComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-function ContinueRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Continue' ---
-    // get current time
-    t = ContinueClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-
-    // *resumeafterlottery_keys* updates
-    if (t >= 0.0 && resumeafterlottery_keys.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      resumeafterlottery_keys.tStart = t;  // (not accounting for frame time here)
-      resumeafterlottery_keys.frameNStart = frameN;  // exact frame index
-
-      // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { resumeafterlottery_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { resumeafterlottery_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { resumeafterlottery_keys.clearEvents(); });
-    }
-
-    if (resumeafterlottery_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = resumeafterlottery_keys.getKeys({keyList: ['space'], waitRelease: false});
-      _resumeafterlottery_keys_allKeys = _resumeafterlottery_keys_allKeys.concat(theseKeys);
-      if (_resumeafterlottery_keys_allKeys.length > 0) {
-        resumeafterlottery_keys.keys = _resumeafterlottery_keys_allKeys[0].name;  // just the first key pressed
-        resumeafterlottery_keys.rt = _resumeafterlottery_keys_allKeys[0].rt;
-        // a response ends the routine
-        continueRoutine = false;
-      }
-    }
-
-
-    // *resumetext_text* updates
-    if (t >= 0.0 && resumetext_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      resumetext_text.tStart = t;  // (not accounting for frame time here)
-      resumetext_text.frameNStart = frameN;  // exact frame index
-
-      resumetext_text.setAutoDraw(true);
-    }
-
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-
-    continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of ContinueComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
-
-    // refresh the screen if continuing
-    if (continueRoutine) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-function ContinueRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Continue' ---
-    for (const thisComponent of ContinueComponents) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    }
-    // update the trial handler
-    if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(resumeafterlottery_keys.corr, level);
-    }
-    psychoJS.experiment.addData('resumeafterlottery_keys.keys', resumeafterlottery_keys.keys);
-    if (typeof resumeafterlottery_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('resumeafterlottery_keys.rt', resumeafterlottery_keys.rt);
-        routineTimer.reset();
-        }
-
-    resumeafterlottery_keys.stop();
-    // the Routine "Continue" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset();
-
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
 
 // insert stress slider here
 var salienceratingtext;
