@@ -2779,7 +2779,6 @@ function Partner_MatchRoutineEnd(snapshot) {
   }
 }
 
-
 var Photo_ShareComponents;
 function Photo_ShareRoutineBegin(snapshot) {
   return async function () {
@@ -2839,7 +2838,7 @@ function Photo_ShareRoutineEachFrame() {
       // keep track of start time/frame for later
       waitforfeedback_text.tStart = t;  // (not accounting for frame time here)
       waitforfeedback_text.frameNStart = frameN;  // exact frame index
-
+      
       waitforfeedback_text.setAutoDraw(true);
     }
 
@@ -2854,7 +2853,7 @@ function Photo_ShareRoutineEachFrame() {
       // keep track of start time/frame for later
       participantimage_image.tStart = t;  // (not accounting for frame time here)
       participantimage_image.frameNStart = frameN;  // exact frame index
-
+      participantimage_image.setImage(Photos);
       participantimage_image.setAutoDraw(true);
     }
 
