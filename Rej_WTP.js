@@ -87,10 +87,9 @@ psychoJS.start({
 
 psychoJS.start({
   resources: [
-
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
-
-        {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
     {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
@@ -129,8 +128,8 @@ psychoJS.start({
     {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg` ,},
     {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg` ,},
     {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,},
     {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,}
-
 ]
 });
 
@@ -1467,7 +1466,7 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: startWTP, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'WTP_csv',
+      trialList: 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv',
       seed: undefined, name: 'WTPloop'
     });
     psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
