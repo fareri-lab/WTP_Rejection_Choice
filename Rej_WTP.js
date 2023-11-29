@@ -3479,9 +3479,7 @@ function StressLevelRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    stressleveltext = 'How are you feeling right now?
-
-    Click the line to begin rating.'
+    stressleveltext = 'How are you feeling right now? Click the line to begin rating.'
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     // stress_slider.markerPos = 5;
