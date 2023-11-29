@@ -87,8 +87,8 @@ psychoJS.start({
 
 psychoJS.start({
   resources: [
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv'},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv'},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
@@ -99,37 +99,37 @@ psychoJS.start({
     {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
     {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
 
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,}
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg' ,},
+    {'name': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg', 'path': 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg' ,}
 ]
 });
 
@@ -145,7 +145,7 @@ async function updateInfo() {
   expInfo['psychopyVersion'] = '2022.2.1';
   expInfo['OS'] = window.navigator.platform;
 
-  psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["participant"]}/${expInfo["participant"]}_${expName}_${expInfo["date"]}`);
+  psychoJS.experiment.dataFileName = (("." + "/") + 'data/${expInfo["participant"]}/${expInfo["participant"]}_${expName}_${expInfo["date"]}');
 
   // store frame rate of monitor if we can measure it successfully
   expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
@@ -1406,7 +1406,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       //nReps: 5, method: TrialHandler.Method.SEQUENTIAL,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`,
+      trialList: 'Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv',
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
@@ -2296,7 +2296,7 @@ function partner_codeRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from partnermatchcode
-    partnermatch = `You have matched with: ${Partner}`;
+    partnermatch = 'You have matched with: ${Partner}';
     if ((Partner === "Sam")) {
         partneravatar = "Task_Images/nerdemoji_nobackground.png";
     }
@@ -2899,7 +2899,7 @@ function Photo_ShareRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from initiatefeedbackresponses
-    feedbackresponses = `${Partner} ${Feedback} your photo`;
+    feedbackresponses = '${Partner} ${Feedback} your photo';
     if ((Feedback === "liked")) {
         fdbkimage = "Task_Images/thumbsup.png";
     } else {
@@ -3190,8 +3190,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    salienceratingtext = `You have finished sharing your photos with ${Partner}. \n\n How likely are you to share photos with ${Partner} in the future?
-    Click the line to begin rating.`
+    salienceratingtext = 'You have finished sharing your photos with ${Partner}. \n\n How likely are you to share photos with ${Partner} in the future? Click the line to begin rating.'
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     //salience_slider.markerPos = 3;
@@ -3480,9 +3479,9 @@ function StressLevelRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    stressleveltext = `How are you feeling right now?
+    stressleveltext = 'How are you feeling right now?
 
-    Click the line to begin rating.`
+    Click the line to begin rating.'
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     // stress_slider.markerPos = 5;
