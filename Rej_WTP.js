@@ -2791,7 +2791,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
     routineTimer.add(FeedbackWait);
-
+    console.log(Photos);
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
     // keep track of which components have finished
