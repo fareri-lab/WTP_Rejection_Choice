@@ -1406,7 +1406,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       //nReps: 5, method: TrialHandler.Method.SEQUENTIAL,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`,encoding='utf-8'
+      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
@@ -3924,3 +3924,4 @@ async function quitPsychoJS(message, isCompleted) {
 
   return Scheduler.Event.QUIT;
 }
+
