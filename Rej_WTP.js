@@ -1508,15 +1508,6 @@ function ChoiceRoutineBegin() {
   ChoiceClock.reset(); // clock
   frameN = -1;
 
-  // update component parameters for each repeat
-  //uses conditions from spreadsheet to setText
-  leftText.setText(Left);
-  rightText.setText(Right);
-  instruct_toptext.setText("Press '1' for left option\n\nPress '2' for right option");
-  money1.setText("$" + leftmoney);
-  money2.setText("$" + rightmoney);
-  // create key response
-  responses = new core.BuilderKeyResponse(psychoJS);
 
 
   // keep track of which components have finished
@@ -1529,6 +1520,17 @@ function ChoiceRoutineBegin() {
   ChoiceComponents.push(instruct_toptext);
   ChoiceComponents.push(conditionalBlank);
 
+
+
+  // update component parameters for each repeat
+  //uses conditions from spreadsheet to setText
+  leftText.setText(Left);
+  rightText.setText(Right);
+  instruct_toptext.setText("Press '1' for left option\n\nPress '2' for right option");
+  money1.setText("$" + leftmoney);
+  money2.setText("$" + rightmoney);
+  // create key response
+  responses = new core.BuilderKeyResponse(psychoJS);
  //if the components have a status function, say that it has not started yet and go to the next event
   for (const thisComponent of ChoiceComponents)
     if ('status' in thisComponent)
