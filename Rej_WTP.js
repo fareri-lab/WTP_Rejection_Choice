@@ -1395,6 +1395,9 @@ function First_InstructionsRoutineEnd(snapshot) {
 }
 
 
+var trial_nums;
+var WTPloop;
+var WTP_trial;
 var entiretaskloop;
 function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   return async function() {
@@ -1454,9 +1457,6 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   }
 }
 // insert wtp here
-var trial_nums;
-var WTPloop;
-var WTP_trial;
 function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
