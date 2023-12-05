@@ -1,10 +1,10 @@
-ï»¿TrialNumber,social_left,Left_Exp,Right_Exp,leftmoney,rightmoney,greenText,left_more_than_right,matching_prices,social_worthmore
+TrialNumber,social_left,Left_Exp,Right_Exp,leftmoney,rightmoney,greenText,left_more_than_right,matching_prices,social_worthmore
 1,0,Rearranging furniture in your house,Going to a carnival with friends,0.01,0.01,green,0,1,1
 2,0,Watching a new episode of a television show,Having a picnic with family,0.02,0.01,green,1,0,0
 3,0,"Painting your bedroom
 a new color",Having a romantic dinner with a significant other,0.03,0.01,green,1,0,0
 4,0,Playing with a pet,Studying abroad with friends,0.04,0.01,green,1,0,0
-5,0,Reading a book,Going to a friendâ€™s birthday party,0.05,0.01,green,1,0,0
+5,0,Reading a book,Going to a friendÕs birthday party,0.05,0.01,green,1,0,0
 6,0,"Listening to music
 by yourself","Giving a friend a ride
 to school",0.01,0.02,green,0,0,1
@@ -22,17 +22,15 @@ event with friends",0.03,0.03,green,0,1,1
 14,0,Getting a haircut,Going on a dinner date,0.04,0.03,green,1,0,0
 15,0,Playing a videogame at home,"Snapchatting with
 friends",0.05,0.03,green,1,0,0
-16,0,"Going to a farmer's
-market by yourself",Getting lunch with coworkers,0.01,0.04,green,0,0,1
+16,0,Going to a farmer's market by yourself,Getting lunch with coworkers,0.01,0.04,green,0,0,1
 17,0,Running a marathon,"Adding new friends
 on facebook",0.02,0.04,green,0,0,1
-18,0,Watching the news,Going to a family memberâ€™s baby shower,0.03,0.04,green,0,0,1
+18,0,Watching the news,Going to a family memberÕs baby shower,0.03,0.04,green,0,0,1
 19,0,Going on vacation by yourself,"Going to a work outing
 with colleagues",0.04,0.04,green,0,1,1
 20,0,Listening to a podcast,Getting breakfast with a significant other,0.05,0.04,green,1,0,0
 21,0,Going on a hike by yourself,Babysitting for a family member,0.01,0.05,green,0,0,1
-22,0,"Going for a bicycle
-ride alone","Going on Spring Break 
+22,0,Going for a bicycle ride alone,"Going on Spring Break 
 vacation with friends",0.02,0.05,green,0,0,1
 23,0,Learning how to perform card tricks,Going camping with family,0.03,0.05,green,0,0,1
 24,0,Going to a museum alone,Participating in a debate,0.04,0.05,green,0,0,1
@@ -53,7 +51,7 @@ class",0.04,0.02,green,1,0,1
 36,1,Attending a family barbeque,Watching a football game from home,0.01,0.03,green,0,0,0
 37,1,Getting likes on a facebook post,Taking a nap,0.02,0.03,green,0,0,0
 38,1,"Going shopping with
-a significant other",Trying to solve a Rubikâ€™s cube,0.03,0.03,green,0,1,0
+a significant other",Trying to solve a RubikÕs cube,0.03,0.03,green,0,1,0
 39,1,Taking a road trip with family,Planting flowers in a garden,0.04,0.03,green,1,0,1
 40,1,Playing a team sport,Going for a walk in the park,0.05,0.03,green,1,0,1
 41,1,Going to a party with roommates,Buying clothes for yourself,0.01,0.04,green,0,0,0
@@ -67,5 +65,5 @@ by yourself",0.04,0.04,green,0,1,0
 46,1,Watching the sunset with a significant other,Reading at the library,0.01,0.05,green,0,0,0
 47,1,Attending a Superbowl party,Exercising from home,0.02,0.05,green,0,0,0
 48,1,Going to a concert with a friend,Practicing photography,0.03,0.05,green,0,0,0
-49,1,Attending a family memberâ€™s wedding,Practicing an instrument,0.04,0.05,green,0,0,0
+49,1,Attending a family memberÕs wedding,Practicing an instrument,0.04,0.05,green,0,0,0
 50,1,Playing a tennis match with a friend,Cleaning up around the house,0.05,0.05,green,0,1,0
