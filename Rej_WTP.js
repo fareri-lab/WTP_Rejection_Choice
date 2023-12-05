@@ -1524,8 +1524,8 @@ function ChoiceRoutineBegin() {
 
   // update component parameters for each repeat
   //uses conditions from spreadsheet to setText
-  leftText.setText(Left_Exp);
   rightText.setText(Right_Exp);
+  leftText.setText(Left_Exp);
   instruct_toptext.setText("Press '1' for left option\n\nPress '2' for right option");
   money1.setText("$" + leftmoney);
   money2.setText("$" + rightmoney);
