@@ -87,8 +87,8 @@ psychoJS.start({
 
 psychoJS.start({
   resources: [
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
@@ -1409,7 +1409,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       //nReps: 5, method: TrialHandler.Method.SEQUENTIAL,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`,
+      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`,
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
@@ -1466,7 +1466,7 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: startWTP, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.csv`, 
+      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`, 
       seed: undefined, name: 'WTPloop'
     });
     psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
