@@ -1464,7 +1464,7 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     WTPloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: startWTP, method: TrialHandler.Method.RANDOM,
+      nReps: startWTP, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
       trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`, 
       seed: undefined, name: 'WTPloop'
@@ -1508,6 +1508,9 @@ function ChoiceRoutineBegin() {
   ChoiceClock.reset(); // clock
   frameN = -1;
 
+  console.log('exp variable here');
+  console.log(Right_Exp);
+  console.log(Left_Exp);
 
   WTP_trial = WTPloop.getCurrentTrial();
   console.log(WTP_trial);
