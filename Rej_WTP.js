@@ -1509,7 +1509,10 @@ function ChoiceRoutineBegin() {
   frameN = -1;
 
 
-
+  WTP_trial = WTPloop.getCurrentTrial();
+  console.log(WTP_trial);
+  console.log(startWTP);
+  
   // keep track of which components have finished
   ChoiceComponents = [];
   ChoiceComponents.push(leftText);
