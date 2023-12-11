@@ -1465,7 +1465,7 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
     
-    // set up handler to look after randomisation of conditions etc
+    // set up handler to look after randomisation of conditions etc 
     WTPloop = new TrialHandler({
       psychoJS: psychoJS,
       nReps: startWTP, method: TrialHandler.Method.SEQUENTIAL,
@@ -1498,6 +1498,9 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   }
 }
 // Choice Routine goes there
+console.log('jkfedfhsd');
+console.log(Right_Exp);
+console.log(Left_Exp);
 
 
 var responses;
@@ -3936,3 +3939,4 @@ async function quitPsychoJS(message, isCompleted) {
 
   return Scheduler.Event.QUIT;
 }
+.
