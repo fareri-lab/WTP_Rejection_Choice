@@ -1507,6 +1507,8 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
 
 
 var responses;
+var rightText;
+var leftText;
 var continueRoutine;
 var theseKeys;
 var ChoiceComponents;
@@ -1523,6 +1525,8 @@ function ChoiceRoutineBegin() {
   ChoiceComponents = [];
   ChoiceComponents.push(Left_Exp);
   ChoiceComponents.push(Right_Exp);
+  ChoiceComponents.push(rightText);
+  ChoiceComponents.push(leftText);
   ChoiceComponents.push(responses);
   ChoiceComponents.push(money1);
   ChoiceComponents.push(money2);
