@@ -1478,9 +1478,6 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
     WTP_trial = WTPloop.getCurrentTrial();
     console.log(WTP_trial);
 
-    console.log('jkfedfhsd');
-    console.log(Right_Exp);
-    console.log(Left_Exp);
     // Schedule all the trials in the trialList:
     for (const thisWTPloop of WTPloop) {
       snapshot = WTPloop.getSnapshot();
