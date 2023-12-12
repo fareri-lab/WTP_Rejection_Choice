@@ -1477,6 +1477,10 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
     currentLoop = WTPloop;  // we're now the current loop
     WTP_trial = WTPloop.getCurrentTrial();
     console.log(WTP_trial);
+
+    console.log('jkfedfhsd');
+    console.log(Right_Exp);
+    console.log(Left_Exp);
     // Schedule all the trials in the trialList:
     for (const thisWTPloop of WTPloop) {
       snapshot = WTPloop.getSnapshot();
@@ -1498,9 +1502,7 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   }
 }
 // Choice Routine goes there
-console.log('jkfedfhsd');
-console.log(Right_Exp);
-console.log(Left_Exp);
+
 
 
 var responses;
@@ -1516,6 +1518,7 @@ function ChoiceRoutineBegin() {
   frameN = -1;
 
   console.log('exp variable here');
+  console.log(social_left);
   console.log(Right_Exp);
   console.log(Left_Exp);
 
