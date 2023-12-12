@@ -1524,24 +1524,24 @@ function ChoiceRoutineBegin() {
   ChoiceComponents.push(Left_Exp);
   ChoiceComponents.push(Right_Exp);
   ChoiceComponents.push(responses);
-  ChoiceComponents.push(leftmoney);
-  ChoiceComponents.push(rightmoney);
+  ChoiceComponents.push(money1);
+  ChoiceComponents.push(money2);
   ChoiceComponents.push(instruct_toptext);
   ChoiceComponents.push(conditionalBlank);
 
 
   console.log('exp variable here');
   console.log(WTPloop.social_worthmore);
-  console.log(Right_Exp);
-  console.log(Left_Exp);
+  console.log(WTPloop.Right_Exp);
+  console.log(WTPloop.Left_Exp);
 
   WTP_trial = WTPloop.getCurrentTrial();
   console.log(WTP_trial);
   console.log(startWTP);
   // update component parameters for each repeat
   //uses conditions from spreadsheet to setText
-  rightText.setText(Right_Exp);
-  leftText.setText(Left_Exp);
+  rightText.setText(WTPloop.Right_Exp);
+  leftText.setText(WTPloop.Left_Exp);
   instruct_toptext.setText("Press '1' for left option\n\nPress '2' for right option");
   money1.setText("$" + leftmoney);
   money2.setText("$" + rightmoney);
