@@ -33,7 +33,7 @@ rating_forstress = "";
 
 
 
-
+participantID = expInfo["participant"]
 // init psychoJS:
 const psychoJS = new PsychoJS({
   debug: true
@@ -91,8 +91,8 @@ psychoJS.start({
 
 psychoJS.start({
   resources: [
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`},
-    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.xlsx`},
+    {'name': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`, 'path': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`},
+    {'name': `Participant_Images/${participantID}/${participantID}_trials.xlsx`, 'path': `Participant_Images/${participantID}/${participantID}_trials.xlsx`},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
@@ -1465,12 +1465,12 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
 
-    // set up handler to look after randomisation of conditions etc 
+    // set up handler to look after randomisation of conditions etc
     WTPloop = new TrialHandler({
       psychoJS: psychoJS,
       nReps: startWTP, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_WTP.xlsx`, 
+      trialList: `Participant_Images/${participantID}/${participantID}_WTP.xlsx`,
       seed: undefined, name: 'WTPloop'
     });
     psychoJS.experiment.addLoop(WTPloop); // add the loop to the experiment
@@ -2853,7 +2853,7 @@ function Photo_ShareRoutineEachFrame() {
       // keep track of start time/frame for later
       waitforfeedback_text.tStart = t;  // (not accounting for frame time here)
       waitforfeedback_text.frameNStart = frameN;  // exact frame index
-      
+
       waitforfeedback_text.setAutoDraw(true);
     }
 
