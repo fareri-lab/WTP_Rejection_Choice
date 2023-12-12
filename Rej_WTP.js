@@ -1515,7 +1515,7 @@ function ChoiceRoutineBegin() {
   frameN = -1;
 
   console.log('exp variable here');
-  console.log(social_left);
+  console.log(WTPloop.social_left);
   console.log(Right_Exp);
   console.log(Left_Exp);
 
