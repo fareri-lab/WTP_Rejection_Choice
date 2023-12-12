@@ -32,8 +32,8 @@ stressleveltext = "";
 rating_forstress = "";
 
 
-
-participantID = expInfo["participant"]
+var participantID;
+participantID = expInfo["participant"];
 // init psychoJS:
 const psychoJS = new PsychoJS({
   debug: true
