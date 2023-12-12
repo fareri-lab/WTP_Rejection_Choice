@@ -1499,6 +1499,70 @@ function WTPloopLoopBegin(WTPloopLoopScheduler, snapshot) {
   }
 }
 // Choice Routine goes there
+async function WTPloopLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(WTPloop);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+
+function WTPloopLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+//  WTP ends here
+
+async function entiretaskloopLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(entiretaskloop);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+
+function entiretaskloopLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
 
 
 
@@ -2150,100 +2214,6 @@ function ISI2RoutineEnd() {
 
 //end loop
 
-async function WTP_trialsLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(WTP_trials);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-
-function WTP_trialsLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-async function WTPloopLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(WTPloop);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-
-function WTPloopLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      } else {
-        psychoJS.experiment.nextEntry(snapshot);
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-//  WTP ends here
-
-async function entiretaskloopLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(entiretaskloop);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-
-function entiretaskloopLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      } else {
-        psychoJS.experiment.nextEntry(snapshot);
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
 
 
 var partner_codeComponents;
