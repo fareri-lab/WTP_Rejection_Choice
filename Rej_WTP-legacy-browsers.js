@@ -1,109 +1,48 @@
-﻿/*********************** 
- * Rej_Wtp_Legacy Test *
- ***********************/
+``/***************************** 
+ * Wtp_Sm_Choice_Legacy Test *
+ *****************************/
+
+import { core, data, sound, util, visual, hardware } from './lib/psychojs-2022.2.1.js';
+const { PsychoJS } = core;
+const { TrialHandler, MultiStairHandler } = data;
+const { Scheduler } = util;
+//some handy aliases as in the psychopy scripts;
+const { abs, sin, cos, PI: pi, sqrt } = Math;
+const { round } = util;
 
 
 // store info about the experiment session:
-let expName = 'Rej_WTP_legacy';  // from the Builder filename that created this script
+let expName = 'WTP_SM_Choice';  // from the Builder filename that created this script
 let expInfo = {
-    'participant': '',
-    'session': '001',
+    'participant': ''
 };
 
+// add info from the URL:
+util.addInfoFromUrl(expInfo);
+console.log(expInfo['participant'])
+
+
 // Start code blocks for 'Before Experiment'
-// Run 'Before Experiment' code from buildspreadsheet
-import * as itertools from 'itertools';
-import * as os from 'os';
-import * as pd from 'pandas';
-import * as np from 'numpy';
-import * as random from 'random';
-import {Image} from 'PIL';
-var acc, alltrials, block, blocklist, condition, condition_selected, feedback, imagedir, nTrials, pDislike, pLike, partner, partner_selected, partnerlist, photo_selected, photolist, rej, sociallevel;
-imagedir = "Participant_Images/";
-sociallevel = ["Rej", "Acc", "Rej", "Acc"];
-partnerlist = ["Charlie", "Sam", "Riley", "Alex"];
-photolist = os.listdir(((os.getcwd() + "/") + imagedir));
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var value = _pj_b[_pj_c];
-        if (value.endswith(".jpg")) {
-            _pj_a.push(value);
-        }
-    }
-    return _pj_a;
-}
-.call(this);
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var x = _pj_b[_pj_c];
-        _pj_a.push((imagedir + x));
-    }
-    return _pj_a;
-}
-.call(this);
-condition = "";
-partner = "";
-feedback = "";
-condition_selected = random.sample(sociallevel, 4);
-partner_selected = random.sample(partnerlist, 4);
-block = 0;
-nTrials = 25;
-alltrials = new pd.DataFrame({"columns": ["TrialNumber", "Partner", "Condition", "Photos", "Feedback"]});
-alltrials["Partner"] = "";
-alltrials["Feedback"] = "";
-alltrials["Condition"] = "";
-alltrials["Photos"] = "";
-for (var i, _pj_c = 0, _pj_a = util.range(0, 4), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
-    i = _pj_a[_pj_c];
-    if ((condition_selected[i] === "Rej")) {
-        pDislike = 0.7;
-        pLike = 0.3;
-        rej = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-        partner = partner_selected[i];
-        condition = condition_selected[i];
-        blocklist = ((["did not like"] * (Number.parseInt((nTrials * pDislike)) + 1)) + (["liked"] * Number.parseInt((nTrials * pLike))));
-        random.shuffle(blocklist);
-        feedback = random.sample(blocklist, 25);
-        photo_selected = random.sample(photolist, 25);
-        rej["Feedback"] = feedback;
-        rej["Partner"] = partner;
-        rej["Condition"] = condition;
-        rej["Photos"] = photo_selected;
-        alltrials = pd.concat([alltrials, rej], {"ignore_index": true});
-    } else {
-        if ((condition_selected[i] === "Acc")) {
-            pDislike = 0.3;
-            pLike = 0.7;
-            acc = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-            partner = partner_selected[i];
-            condition = condition_selected[i];
-            blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * (Number.parseInt((nTrials * pLike)) + 1)));
-            random.shuffle(blocklist);
-            feedback = random.sample(blocklist, 25);
-            photo_selected = random.sample(photolist, 25);
-            acc["Feedback"] = feedback;
-            acc["Partner"] = partner;
-            acc["Condition"] = condition;
-            acc["Photos"] = photo_selected;
-            alltrials = pd.concat([alltrials, acc], {"ignore_index": true});
-        }
-    }
-}
-
-// Run 'Before Experiment' code from hidecontinuesharingroutine_code
-test_range = "45:50";
-
 // Run 'Before Experiment' code from saliencyrating_code
+var saliencerating;
+var salienceratingtext;
+var rating_forsalience;
 saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
 
 // Run 'Before Experiment' code from stresslevelslider
+
+var stresslevel;
+var stressleveltext;
+var rating_forstress;
+
 stresslevel = "";
 stressleveltext = "";
 rating_forstress = "";
+
+
+
 
 // init psychoJS:
 const psychoJS = new PsychoJS({
@@ -133,9 +72,6 @@ flowScheduler.add(experimentInit);
 flowScheduler.add(Welcome_ScreenRoutineBegin());
 flowScheduler.add(Welcome_ScreenRoutineEachFrame());
 flowScheduler.add(Welcome_ScreenRoutineEnd());
-flowScheduler.add(testRoutineBegin());
-flowScheduler.add(testRoutineEachFrame());
-flowScheduler.add(testRoutineEnd());
 flowScheduler.add(First_InstructionsRoutineBegin());
 flowScheduler.add(First_InstructionsRoutineEachFrame());
 flowScheduler.add(First_InstructionsRoutineEnd());
@@ -147,17 +83,64 @@ flowScheduler.add(quitPsychoJS, '', true);
 
 // quit if user presses Cancel in dialog box:
 dialogCancelScheduler.add(quitPsychoJS, '', false);
+var participantID;
+participantID = expInfo["participant"];
 
 psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'html_resources_UPDATED_wtp_trials_2021.csv', 'path': 'html_resources_UPDATED_wtp_trials_2021.csv'}
+
+    {'name': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`, 'path': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`},
+    {'name': `Participant_Images/${participantID}/${participantID}_trials.csv`, 'path': `Participant_Images/${participantID}/${participantID}_trials.csv`},
+    {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'},
+    {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'},
+    {'name': 'Images/nerdemoji_nobackground.png', 'path': 'Images/nerdemoji_nobackground.png'},
+    {'name': 'Images/smilingemoji.png', 'path': 'Images/smilingemoji.png'},
+    {'name': 'Images/sunglassemoji_nobackground.png', 'path': 'Images/sunglassemoji_nobackground.png'},
+    {'name': 'Images/thumbsdown.png', 'path': 'Images/thumbsdown.png'},
+    {'name': 'Images/thumbsup.png', 'path': 'Images/thumbsup.png'},
+    {'name': 'Images/cowboyemoji.png', 'path': 'Images/cowboyemoji.png'},
+    {'name': 'Images/huggingemoji.png', 'path': 'Images/huggingemoji.png'},
+
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.jpg` ,}
   ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
 
+var currentLoop;
+var frameDur;
 async function updateInfo() {
   currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
@@ -179,6 +162,88 @@ async function updateInfo() {
   
   return Scheduler.Event.NEXT;
 }
+var globalClock;
+var Welcome_ScreenClock;
+var Welcome;
+var routineTimer;
+var FirstInstructions;
+var First_InstructionsClock;
+var endwelcomescreen_keys;
+var partnermatch;
+var partneravatar;
+var trialset;
+var First_InstructionsClock;
+var First_Instructions;
+var endinstructionscreen_keys;
+var partner_codeClock;
+var partnermatch;
+var partneravatar;
+var WaitingToMatchClock;
+var Match_text;
+var syncing_text;
+var text_0;
+var Transparent;
+var Loading_25;
+var text_25;
+var Loading_50;
+var text_50;
+var Loading_75;
+var text_75;
+var Loading_100;
+var text_100;
+var Partner_MatchClock;
+var Youhavematched;
+var partneremoji_image;
+var endpartnermatch_keys;
+var PressToContinue;
+var Photo_ShareClock;
+var photobeingshared_text;
+var waitforfeedback_text;
+var feedbackresponses;
+var fdbkimage;
+var participantimage_image;
+var WaitingforfeedbackClock;
+var waiting_text;
+var feedbackClock;
+var displayfeedback_text;
+var fdbkimage_image;
+var WTPlottery;
+var continuesharingClock;
+var presstosharenextphoto_text;
+var sharenextphoto_key;
+var WTP_Instructions1Clock;
+var WTP_ins_text1;
+var WTP_ins_keys1;
+var WTP_Instructions2Clock;
+var WTP_ins_text2;
+var WTP_ins_keys2;
+var WTPTaskClock;
+var Left_Experience;
+var Right_Experience;
+var Left_Price;
+var Right_Price;
+var responses;
+var ITIClock;
+var ITI_text;
+var ContinueClock;
+var resumetext;
+var Resume_keys;
+var Resume_Text;
+var SalienceRatingClock;
+var salience_slider;
+var saliencequestion_text;
+var key_resp;
+var salienceavatar_image;
+var saliencecontinue_text;
+var displayrating_text;
+var StressLevelClock;
+var stress_slider;
+var stresslevel_text;
+var stresslevel_keypress;
+var displaystressrating_text;
+
+
+
 
 async function experimentInit() {
   // Initialize components for Routine "Welcome_Screen"
@@ -197,21 +262,11 @@ async function experimentInit() {
   
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  // Run 'Begin Experiment' code from buildspreadsheet
-  subid = expInfo["participant"];
-  alltrials["TrialNumber"] = util.range(1, 101);
-  expdir = os.getcwd();
-  subjdir = `${expdir}/data/${subid}`;
-  if ((! os.path.exists(subjdir))) {
-      os.makedirs(subjdir);
-  }
-  trial_sheet = `${subjdir}/${subid}`;
-  alltrials.to_csv(trial_sheet, {"index": false});
+  // Run 'Begin Experiment' code from spreadsheets
   partnermatch = "";
   partneravatar = "";
+  trialset = util.range(0, 5);
   
-  // Initialize components for Routine "test"
-  testClock = new util.Clock();
   // Initialize components for Routine "First_Instructions"
   First_InstructionsClock = new util.Clock();
   FirstInstructions = new visual.TextStim({
@@ -479,7 +534,7 @@ async function experimentInit() {
     texRes : 128.0, interpolate : true, depth : -1.0 
   });
   // Run 'Begin Experiment' code from initiatelottery_code
-  startlottery = "";
+  WTPlottery = "";
   
   // Initialize components for Routine "continuesharing"
   continuesharingClock = new util.Clock();
@@ -497,12 +552,12 @@ async function experimentInit() {
   
   sharenextphoto_key = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  // Initialize components for Routine "Choice"
-  ChoiceClock = new util.Clock();
-  Experiencechoice_text = new visual.TextStim({
+  // Initialize components for Routine "WTP_Instructions1"
+  WTP_Instructions1Clock = new util.Clock();
+  WTP_ins_text1 = new visual.TextStim({
     win: psychoJS.window,
-    name: 'Experiencechoice_text',
-    text: "Thank you! You will now have the opportunity to choose between a variety of different experiences you'd like to participate in.\n\nYou can either have the computer pick on your behalf or you may choose the experience yourself. If you would like the computer to choose for you press ‘c’. If you would like to choose the experience yourself press ‘s’. \n\n\nYou will have 3 seconds to decide.\n",
+    name: 'WTP_ins_text1',
+    text: "In this part of the task, you will be choosing between two options.\n\nPlease indicate which option you would prefer by using your keyboard to press '1' for the choice on the left, or '2' for the choice on the right. \n\nEach option is associated with a price, which will be subtracted from your earnings from the previous task upon making a selection. \n\nPress SPACE to continue.",
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
@@ -511,264 +566,100 @@ async function experimentInit() {
     depth: 0.0 
   });
   
-  computer_text = new visual.TextStim({
+  WTP_ins_keys1 = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
+  // Initialize components for Routine "WTP_Instructions2"
+  WTP_Instructions2Clock = new util.Clock();
+  WTP_ins_text2 = new visual.TextStim({
     win: psychoJS.window,
-    name: 'computer_text',
-    text: 'Computer',
+    name: 'WTP_ins_text2',
+    text: 'Imagine yourself actually doing the experiences shown on screen before making your decision.\n\nYou will have ten seconds to make a response after seeing the choices. \n\nWhen you make your choice, your selection will turn green. \n\nPress SPACE to start the task.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -1.0 
-  });
-  
-  self_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'self_text',
-    text: 'Self',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0.3, (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -2.0 
-  });
-  
-  // Run 'Begin Experiment' code from setvariables_code
-  response_msg = " ";
-  feedback_msg = " ";
-  feedback_msg2 = " ";
-  computer_choice = ["Left", "Left", "Right", "Right", "Right"];
-  selfrunOrNot = "";
-  comprunOrNot = "";
-  resumetext = "";
-  
-  choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
-  // Initialize components for Routine "Experiencecomputerchoice"
-  ExperiencecomputerchoiceClock = new util.Clock();
-  // Initialize components for Routine "Experience_computer_choice"
-  Experience_computer_choiceClock = new util.Clock();
-  Socialleft_text_2 = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Socialleft_text_2',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [(- 0.4), 0.2], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
   });
   
-  Socialright_text_2 = new visual.TextStim({
+  WTP_ins_keys2 = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
+  // Initialize components for Routine "WTPTask"
+  WTPTaskClock = new util.Clock();
+  Left_Experience = new visual.TextStim({
     win: psychoJS.window,
-    name: 'Socialright_text_2',
-    text: '',
+    name: 'Left_Experience',
+    text: undefined,
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.4, 0.2], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.5, 0.1], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: 0.0 
+  });
+  
+  Right_Experience = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'Right_Experience',
+    text: undefined,
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [(- 0.5), 0.1], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
   
-  leftmoney_text_2 = new visual.TextStim({
+  Left_Price = new visual.TextStim({
     win: psychoJS.window,
-    name: 'leftmoney_text_2',
+    name: 'Left_Price',
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.5)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.5, (- 0.5)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
   });
   
-  Rightmoney_text_2 = new visual.TextStim({
+  Right_Price = new visual.TextStim({
     win: psychoJS.window,
-    name: 'Rightmoney_text_2',
+    name: 'Right_Price',
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.3, (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.5), (- 0.5)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -3.0 
   });
   
-  OR_text_2 = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'OR_text_2',
-    text: 'OR',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -4.0 
-  });
+  responses = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  Leftchoicekey_text_2 = new visual.TextStim({
+  // Initialize components for Routine "ITI"
+  ITIClock = new util.Clock();
+  ITI_text = new visual.TextStim({
     win: psychoJS.window,
-    name: 'Leftchoicekey_text_2',
+    name: 'ITI_text',
     text: '',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -5.0 
-  });
-  
-  Rightchoicekey_text_2 = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Rightchoicekey_text_2',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -6.0 
-  });
-  
-  blank = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'blank',
-    text: '.',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -7.0 
-  });
-  
-  // Initialize components for Routine "Schoice"
-  SchoiceClock = new util.Clock();
-  SelfChoiceExperiences = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'SelfChoiceExperiences',
-    text: "You will now be asked a series of questions regarding different possible experiences. Please select which option you prefer by selecting either the 'x' key for the option on the left or 'y' key for the option on the right.\n\n\n\nPress space to continue.\n",
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
-  });
-  
-  key_resp_2 = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
-  // Initialize components for Routine "Experienceselfchoice"
-  ExperienceselfchoiceClock = new util.Clock();
-  Socialleft_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Socialleft_text',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [(- 0.4), 0.2], height: 0.1,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
-  });
-  
-  Socialright_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Socialright_text',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0.4, 0.2], height: 0.1,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -1.0 
-  });
-  
-  leftmoney_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'leftmoney_text',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [(- 0.3), (- 0.5)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -2.0 
-  });
-  
-  experiencechoice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
-  responsefeedback = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'responsefeedback',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -5.0 
-  });
-  
-  Rightmoney_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Rightmoney_text',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0.3, (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -6.0 
-  });
-  
-  OR_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'OR_text',
-    text: 'OR',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -7.0 
-  });
-  
-  Leftchoicekey_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Leftchoicekey_text',
-    text: '[x]',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -8.0 
-  });
-  
-  Rightchoicekey_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'Rightchoicekey_text',
-    text: '',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -9.0 
   });
   
   // Initialize components for Routine "Continue"
   ContinueClock = new util.Clock();
-  resumeafterexperience_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  // Run 'Begin Experiment' code from code
+  resumetext = "";
   
-  resumetext_text = new visual.TextStim({
+  Resume_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
+  Resume_Text = new visual.TextStim({
     win: psychoJS.window,
-    name: 'resumetext_text',
+    name: 'Resume_Text',
     text: '',
     font: 'Open Sans',
     units: undefined, 
@@ -781,8 +672,29 @@ async function experimentInit() {
   // Initialize components for Routine "SalienceRating"
   SalienceRatingClock = new util.Clock();
   // Run 'Begin Experiment' code from saliencyrating_code
-  salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
-  
+  salience_slider = new visual.Slider({
+    win: psychoJS.window,
+    name: "slider",
+    size: [1.0, 0.1],
+    pos: [0, -0.2], //[0, (- 0.4)]
+    units: null,
+    labels: [1, 2, 3, 4, 5],
+    ticks: [1, 2, 3, 4, 5],
+    granularity: 0.0,
+    opacity: null,
+    style: [visual.Slider.Style.RATING],
+    labelColor: "white",
+    markerColor: "cornflowerblue",
+    lineColor: "white",
+    colorSpace: "rgb",
+    font: "Open Sans",
+    labelHeight: 0.05,
+    flip: false,
+    ori: 0.0,
+    depth: (- 5),
+    readOnly: false,
+    autoDraw: false});
+    
   saliencequestion_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'saliencequestion_text',
@@ -833,7 +745,6 @@ async function experimentInit() {
   // Initialize components for Routine "StressLevel"
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
-  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
   
   stresslevel_text = new visual.TextStim({
     win: psychoJS.window,
@@ -846,7 +757,28 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
-  
+  stress_slider = new visual.Slider({
+    win: psychoJS.window,
+    name: "slider",
+    size: [1.0, 0.1],
+    pos: [0, -0.2], //[0,(-0.4)]
+    units: null,
+    labels: ['1 (Bad)', '2', '3', '4', '5','6','7','8','9 (Good)'],
+    ticks: [1, 2, 3, 4, 5,6,7,8,9],
+    granularity: 0.0,
+    opacity: null,
+    style: [visual.Slider.Style.RATING],
+    labelColor: "white",
+    markerColor: "cornflowerblue",
+    lineColor: "white",
+    colorSpace: "rgb",
+    font: "Open Sans",
+    labelHeight: 0.05,
+    flip: false,
+    ori: 0.0,
+    depth: (- 5),
+    readOnly: false});
+    
   stresslevel_keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   displaystressrating_text = new visual.TextStim({
@@ -867,7 +799,18 @@ async function experimentInit() {
   
   return Scheduler.Event.NEXT;
 }
-
+var t;
+var frameN;
+var continueRoutine;
+var _endwelcomescreen_keys_allKeys;
+var subid;
+var subjdir;
+var trial_sheet;
+var wtp_sheet;
+var partnermatch;
+var partneravatar;
+var endwelcomescreen_keys;
+var Welcome_ScreenComponents;
 function Welcome_ScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -881,15 +824,22 @@ function Welcome_ScreenRoutineBegin(snapshot) {
     endwelcomescreen_keys.keys = undefined;
     endwelcomescreen_keys.rt = undefined;
     _endwelcomescreen_keys_allKeys = [];
+    // Run 'Begin Routine' code from spreadsheets
+    subid = expInfo["participant"];
+    subjdir = `Participant_Images/${subid}`;
+    trial_sheet = `${subjdir}/${subid}_trials.csv`;
+    wtp_sheet = `${subjdir}/${subid}_WTP.xlsx`;
+    partnermatch = "";
+    partneravatar = "";
+    
     // keep track of which components have finished
     Welcome_ScreenComponents = [];
     Welcome_ScreenComponents.push(Welcome);
     Welcome_ScreenComponents.push(endwelcomescreen_keys);
     
-    Welcome_ScreenComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Welcome_ScreenComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -946,11 +896,11 @@ function Welcome_ScreenRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    Welcome_ScreenComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Welcome_ScreenComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -964,11 +914,11 @@ function Welcome_ScreenRoutineEachFrame() {
 function Welcome_ScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Welcome_Screen' ---
-    Welcome_ScreenComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Welcome_ScreenComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(endwelcomescreen_keys.corr, level);
@@ -991,79 +941,8 @@ function Welcome_ScreenRoutineEnd(snapshot) {
   }
 }
 
-function testRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-    
-    //--- Prepare to start Routine 'test' ---
-    t = 0;
-    testClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    // update component parameters for each repeat
-    // keep track of which components have finished
-    testComponents = [];
-    
-    testComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function testRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'test' ---
-    // get current time
-    t = testClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-    
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-    
-    continueRoutine = false;  // reverts to True if at least one component still running
-    testComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-      }
-    });
-    
-    // refresh the screen if continuing
-    if (continueRoutine) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-function testRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'test' ---
-    testComponents.forEach( function(thisComponent) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    });
-    // the Routine "test" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset();
-    
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
+var _endinstructionscreen_keys_allKeys;
+var First_InstructionsComponents;
 function First_InstructionsRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1082,10 +961,9 @@ function First_InstructionsRoutineBegin(snapshot) {
     First_InstructionsComponents.push(FirstInstructions);
     First_InstructionsComponents.push(endinstructionscreen_keys);
     
-    First_InstructionsComponents.forEach( function(thisComponent) {
+    for (const thisComponent of First_InstructionsComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -1142,11 +1020,11 @@ function First_InstructionsRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    First_InstructionsComponents.forEach( function(thisComponent) {
+    for (const thisComponent of First_InstructionsComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -1160,11 +1038,11 @@ function First_InstructionsRoutineEachFrame() {
 function First_InstructionsRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'First_Instructions' ---
-    First_InstructionsComponents.forEach( function(thisComponent) {
+    for (const thisComponent of First_InstructionsComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(endinstructionscreen_keys.corr, level);
@@ -1187,6 +1065,10 @@ function First_InstructionsRoutineEnd(snapshot) {
   }
 }
 
+var trial_nums;
+var WTPloop;
+var WTP_trial;
+var entiretaskloop;
 function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1203,9 +1085,8 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     currentLoop = entiretaskloop;  // we're now the current loop
     
     // Schedule all the trials in the trialList:
-    entiretaskloop.forEach(function() {
+    for (const thisEntiretaskloop of entiretaskloop) {
       snapshot = entiretaskloop.getSnapshot();
-    
       entiretaskloopLoopScheduler.add(importConditions(snapshot));
       entiretaskloopLoopScheduler.add(partner_codeRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(partner_codeRoutineEachFrame());
@@ -1228,10 +1109,10 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(continuesharingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(continuesharingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(continuesharingRoutineEnd(snapshot));
-      const lotteryloopLoopScheduler = new Scheduler(psychoJS);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot));
-      entiretaskloopLoopScheduler.add(lotteryloopLoopScheduler);
-      entiretaskloopLoopScheduler.add(lotteryloopLoopEnd);
+      const startWTPloopLoopScheduler = new Scheduler(psychoJS);
+      entiretaskloopLoopScheduler.add(startWTPloopLoopBegin(startWTPloopLoopScheduler, snapshot));
+      entiretaskloopLoopScheduler.add(startWTPloopLoopScheduler);
+      entiretaskloopLoopScheduler.add(startWTPloopLoopEnd);
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEnd(snapshot));
@@ -1239,92 +1120,92 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(StressLevelRoutineEachFrame());
       entiretaskloopLoopScheduler.add(StressLevelRoutineEnd(snapshot));
       entiretaskloopLoopScheduler.add(entiretaskloopLoopEndIteration(entiretaskloopLoopScheduler, snapshot));
-    });
+    }
     
     return Scheduler.Event.NEXT;
   }
 }
-
-function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
+var Right_Exp;
+var Left_Exp;
+var leftmoney;
+var rightmoney;
+var startWTPloop;
+function startWTPloopLoopBegin(startWTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
     
     // set up handler to look after randomisation of conditions etc
-    lotteryloop = new TrialHandler({
+    startWTPloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: startlottery, method: TrialHandler.Method.RANDOM,
+      nReps: startWTP, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
-      seed: undefined, name: 'lotteryloop'
+      seed: undefined, name: 'startWTPloop'
     });
-    psychoJS.experiment.addLoop(lotteryloop); // add the loop to the experiment
-    currentLoop = lotteryloop;  // we're now the current loop
+    psychoJS.experiment.addLoop(startWTPloop); // add the loop to the experiment
+    currentLoop = startWTPloop;  // we're now the current loop
     
     // Schedule all the trials in the trialList:
-    lotteryloop.forEach(function() {
-      snapshot = lotteryloop.getSnapshot();
-    
-      lotteryloopLoopScheduler.add(importConditions(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ChoiceRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ChoiceRoutineEnd(snapshot));
-      const computerchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(computerchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(computerchoiceLoopEnd);
-      lotteryloopLoopScheduler.add(SchoiceRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(SchoiceRoutineEachFrame());
-      lotteryloopLoopScheduler.add(SchoiceRoutineEnd(snapshot));
-      const selfchoiceLoopScheduler = new Scheduler(psychoJS);
-      lotteryloopLoopScheduler.add(selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot));
-      lotteryloopLoopScheduler.add(selfchoiceLoopScheduler);
-      lotteryloopLoopScheduler.add(selfchoiceLoopEnd);
-      lotteryloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
-      lotteryloopLoopScheduler.add(ContinueRoutineEachFrame());
-      lotteryloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
-      lotteryloopLoopScheduler.add(lotteryloopLoopEndIteration(lotteryloopLoopScheduler, snapshot));
-    });
+    for (const thisStartWTPloop of startWTPloop) {
+      snapshot = startWTPloop.getSnapshot();
+      startWTPloopLoopScheduler.add(importConditions(snapshot));
+      startWTPloopLoopScheduler.add(WTP_Instructions1RoutineBegin(snapshot));
+      startWTPloopLoopScheduler.add(WTP_Instructions1RoutineEachFrame());
+      startWTPloopLoopScheduler.add(WTP_Instructions1RoutineEnd(snapshot));
+      startWTPloopLoopScheduler.add(WTP_Instructions2RoutineBegin(snapshot));
+      startWTPloopLoopScheduler.add(WTP_Instructions2RoutineEachFrame());
+      startWTPloopLoopScheduler.add(WTP_Instructions2RoutineEnd(snapshot));
+      const WTPTaskLoopLoopScheduler = new Scheduler(psychoJS);
+      startWTPloopLoopScheduler.add(WTPTaskLoopLoopBegin(WTPTaskLoopLoopScheduler, snapshot));
+      startWTPloopLoopScheduler.add(WTPTaskLoopLoopScheduler);
+      startWTPloopLoopScheduler.add(WTPTaskLoopLoopEnd);
+      startWTPloopLoopScheduler.add(ContinueRoutineBegin(snapshot));
+      startWTPloopLoopScheduler.add(ContinueRoutineEachFrame());
+      startWTPloopLoopScheduler.add(ContinueRoutineEnd(snapshot));
+      startWTPloopLoopScheduler.add(startWTPloopLoopEndIteration(startWTPloopLoopScheduler, snapshot));
+    }
     
     return Scheduler.Event.NEXT;
   }
 }
 
-function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
+var WTPTaskLoop;
+
+function WTPTaskLoopLoopBegin(WTPTaskLoopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
     
     // set up handler to look after randomisation of conditions etc
-    computerchoice = new TrialHandler({
+    WTPTaskLoop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: comprunOrNot, method: TrialHandler.Method.SEQUENTIAL,
+      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'html_resources_UPDATED_wtp_trials_2021.csv',
-      seed: undefined, name: 'computerchoice'
+      trialList: TrialHandler.importConditions(psychoJS.serverManager, wtp_sheet, trialset),
+      seed: undefined, name: 'WTPTaskLoop'
     });
-    psychoJS.experiment.addLoop(computerchoice); // add the loop to the experiment
-    currentLoop = computerchoice;  // we're now the current loop
+    psychoJS.experiment.addLoop(WTPTaskLoop); // add the loop to the experiment
+    currentLoop = WTPTaskLoop;  // we're now the current loop
     
     // Schedule all the trials in the trialList:
-    computerchoice.forEach(function() {
-      snapshot = computerchoice.getSnapshot();
-    
-      computerchoiceLoopScheduler.add(importConditions(snapshot));
-      computerchoiceLoopScheduler.add(ExperiencecomputerchoiceRoutineBegin(snapshot));
-      computerchoiceLoopScheduler.add(ExperiencecomputerchoiceRoutineEachFrame());
-      computerchoiceLoopScheduler.add(ExperiencecomputerchoiceRoutineEnd(snapshot));
-      computerchoiceLoopScheduler.add(Experience_computer_choiceRoutineBegin(snapshot));
-      computerchoiceLoopScheduler.add(Experience_computer_choiceRoutineEachFrame());
-      computerchoiceLoopScheduler.add(Experience_computer_choiceRoutineEnd(snapshot));
-      computerchoiceLoopScheduler.add(computerchoiceLoopEndIteration(computerchoiceLoopScheduler, snapshot));
-    });
+    for (const thisWTPTaskLoop of WTPTaskLoop) {
+      snapshot = WTPTaskLoop.getSnapshot();
+      WTPTaskLoopLoopScheduler.add(importConditions(snapshot));
+      WTPTaskLoopLoopScheduler.add(WTPTaskRoutineBegin(snapshot));
+      WTPTaskLoopLoopScheduler.add(WTPTaskRoutineEachFrame());
+      WTPTaskLoopLoopScheduler.add(WTPTaskRoutineEnd(snapshot));
+      WTPTaskLoopLoopScheduler.add(ITIRoutineBegin(snapshot));
+      WTPTaskLoopLoopScheduler.add(ITIRoutineEachFrame());
+      WTPTaskLoopLoopScheduler.add(ITIRoutineEnd(snapshot));
+      WTPTaskLoopLoopScheduler.add(WTPTaskLoopLoopEndIteration(WTPTaskLoopLoopScheduler, snapshot));
+    }
     
     return Scheduler.Event.NEXT;
   }
 }
 
-async function computerchoiceLoopEnd() {
+async function WTPTaskLoopLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(computerchoice);
+  psychoJS.experiment.removeLoop(WTPTaskLoop);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -1333,93 +1214,7 @@ async function computerchoiceLoopEnd() {
   return Scheduler.Event.NEXT;
 }
 
-function computerchoiceLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-    
-    // set up handler to look after randomisation of conditions etc
-    selfchoice = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: selfrunOrNot, method: TrialHandler.Method.SEQUENTIAL,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: TrialHandler.importConditions(psychoJS.serverManager, 'html_resources_UPDATED_wtp_trials_2021.csv', test_range),
-      seed: undefined, name: 'selfchoice'
-    });
-    psychoJS.experiment.addLoop(selfchoice); // add the loop to the experiment
-    currentLoop = selfchoice;  // we're now the current loop
-    
-    // Schedule all the trials in the trialList:
-    selfchoice.forEach(function() {
-      snapshot = selfchoice.getSnapshot();
-    
-      selfchoiceLoopScheduler.add(importConditions(snapshot));
-      selfchoiceLoopScheduler.add(ExperienceselfchoiceRoutineBegin(snapshot));
-      selfchoiceLoopScheduler.add(ExperienceselfchoiceRoutineEachFrame());
-      selfchoiceLoopScheduler.add(ExperienceselfchoiceRoutineEnd(snapshot));
-      selfchoiceLoopScheduler.add(selfchoiceLoopEndIteration(selfchoiceLoopScheduler, snapshot));
-    });
-    
-    return Scheduler.Event.NEXT;
-  }
-}
-
-async function selfchoiceLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(selfchoice);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-function selfchoiceLoopEndIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      }
-    return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-async function lotteryloopLoopEnd() {
-  // terminate loop
-  psychoJS.experiment.removeLoop(lotteryloop);
-  // update the current loop from the ExperimentHandler
-  if (psychoJS.experiment._unfinishedLoops.length>0)
-    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
-  else
-    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
-  return Scheduler.Event.NEXT;
-}
-
-function lotteryloopLoopEndIteration(scheduler, snapshot) {
+function WTPTaskLoopLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1432,6 +1227,34 @@ function lotteryloopLoopEndIteration(scheduler, snapshot) {
         scheduler.stop();
       } else {
         psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+async function startWTPloopLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(startWTPloop);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+function startWTPloopLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
       }
     return Scheduler.Event.NEXT;
     }
@@ -1467,7 +1290,7 @@ function entiretaskloopLoopEndIteration(scheduler, snapshot) {
     }
   };
 }
-
+var partner_codeComponents;
 function partner_codeRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1481,10 +1304,9 @@ function partner_codeRoutineBegin(snapshot) {
     // keep track of which components have finished
     partner_codeComponents = [];
     
-    partner_codeComponents.forEach( function(thisComponent) {
+    for (const thisComponent of partner_codeComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -1507,11 +1329,11 @@ function partner_codeRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    partner_codeComponents.forEach( function(thisComponent) {
+    for (const thisComponent of partner_codeComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -1525,24 +1347,29 @@ function partner_codeRoutineEachFrame() {
 function partner_codeRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'partner_code' ---
-    partner_codeComponents.forEach( function(thisComponent) {
+    for (const thisComponent of partner_codeComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Run 'End Routine' code from partnermatchcode
     partnermatch = `You have matched with: ${Partner}`;
     if ((Partner === "Sam")) {
         partneravatar = "Images/nerdemoji_nobackground.png";
-    }
-    if ((Partner === "Riley")) {
-        partneravatar = "Images/sunglassemoji_nobackground.png";
     } else {
-        if ((Partner === "Charlie")) {
-            partneravatar = "Images/smilingemoji.tiff";
+        if ((Partner === "Riley")) {
+            partneravatar = "Images/sunglassemoji_nobackground.png";
         } else {
-            if ((Partner === "Alex")) {
-                Partneravatar = "Images/cowboyemoji.png";
+            if ((Partner === "Charlie")) {
+                partneravatar = "Images/smilingemoji.png";
+            } else {
+                if ((Partner === "Alex")) {
+                    partneravatar = "Images/cowboyemoji.png";
+                } else {
+                    if ((Partner === "Taylor")) {
+                        partneravatar = "Images/huggingemoji.png";
+                    }
+                }
             }
         }
     }
@@ -1557,7 +1384,11 @@ function partner_codeRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
+var _pj;
+var continueRoutine;
+var frameRemains;
+var t;
+var WaitingToMatchComponents;
 function WaitingToMatchRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1607,14 +1438,15 @@ function WaitingToMatchRoutineBegin(snapshot) {
     WaitingToMatchComponents.push(Loading_100);
     WaitingToMatchComponents.push(text_100);
     
-    WaitingToMatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingToMatchComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
-
+var continueRoutine;
+var frameRemains;
+var t;
 function WaitingToMatchRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'WaitingToMatch' ---
@@ -1801,11 +1633,11 @@ function WaitingToMatchRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    WaitingToMatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingToMatchComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine && routineTimer.getTime() > 0) {
@@ -1819,11 +1651,11 @@ function WaitingToMatchRoutineEachFrame() {
 function WaitingToMatchRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'WaitingToMatch' ---
-    WaitingToMatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingToMatchComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
@@ -1831,7 +1663,8 @@ function WaitingToMatchRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
+var _endpartnermatch_keys_allKeys;
+var Partner_MatchComponents;
 function Partner_MatchRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1877,10 +1710,9 @@ function Partner_MatchRoutineBegin(snapshot) {
     Partner_MatchComponents.push(endpartnermatch_keys);
     Partner_MatchComponents.push(PressToContinue);
     
-    Partner_MatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Partner_MatchComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -1957,11 +1789,11 @@ function Partner_MatchRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    Partner_MatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Partner_MatchComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -1975,11 +1807,11 @@ function Partner_MatchRoutineEachFrame() {
 function Partner_MatchRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Partner_Match' ---
-    Partner_MatchComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Partner_MatchComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(endpartnermatch_keys.corr, level);
@@ -2001,7 +1833,10 @@ function Partner_MatchRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
+var continueRoutine;
+var frameRemains;
+var t;
+var Photo_ShareComponents;
 function Photo_ShareRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2020,10 +1855,9 @@ function Photo_ShareRoutineBegin(snapshot) {
     Photo_ShareComponents.push(waitforfeedback_text);
     Photo_ShareComponents.push(participantimage_image);
     
-    Photo_ShareComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Photo_ShareComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -2088,11 +1922,11 @@ function Photo_ShareRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    Photo_ShareComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Photo_ShareComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine && routineTimer.getTime() > 0) {
@@ -2106,18 +1940,18 @@ function Photo_ShareRoutineEachFrame() {
 function Photo_ShareRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Photo_Share' ---
-    Photo_ShareComponents.forEach( function(thisComponent) {
+    for (const thisComponent of Photo_ShareComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Run 'End Routine' code from initiatefeedbackresponses
     feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
-        fdbkimage = "Images/thumbsup.tiff";
+        fdbkimage = "Images/thumbsup.png";
     } else {
         if ((Feedback === "did not like")) {
-            fdbkimage = "Images/thumbsdown.tiff";
+            fdbkimage = "Images/thumbsdown.png";
         }
     }
     
@@ -2129,6 +1963,7 @@ function Photo_ShareRoutineEnd(snapshot) {
   }
 }
 
+var WaitingforfeedbackComponents;
 function WaitingforfeedbackRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2144,10 +1979,9 @@ function WaitingforfeedbackRoutineBegin(snapshot) {
     WaitingforfeedbackComponents = [];
     WaitingforfeedbackComponents.push(waiting_text);
     
-    WaitingforfeedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingforfeedbackComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -2184,11 +2018,11 @@ function WaitingforfeedbackRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    WaitingforfeedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingforfeedbackComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine && routineTimer.getTime() > 0) {
@@ -2202,11 +2036,11 @@ function WaitingforfeedbackRoutineEachFrame() {
 function WaitingforfeedbackRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Waitingforfeedback' ---
-    WaitingforfeedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WaitingforfeedbackComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
@@ -2214,7 +2048,8 @@ function WaitingforfeedbackRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
+var startWTP;
+var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2230,9 +2065,9 @@ function feedbackRoutineBegin(snapshot) {
     fdbkimage_image.setImage(fdbkimage);
     // Run 'Begin Routine' code from initiatelottery_code
     if (((TrialNumber % 5) === 0)) {
-        startlottery = 1;
+        startWTP = 1;
     } else {
-        startlottery = 0;
+        startWTP = 0;
     }
     
     // keep track of which components have finished
@@ -2240,10 +2075,9 @@ function feedbackRoutineBegin(snapshot) {
     feedbackComponents.push(displayfeedback_text);
     feedbackComponents.push(fdbkimage_image);
     
-    feedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of feedbackComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -2294,11 +2128,11 @@ function feedbackRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    feedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of feedbackComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine && routineTimer.getTime() > 0) {
@@ -2312,11 +2146,11 @@ function feedbackRoutineEachFrame() {
 function feedbackRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'feedback' ---
-    feedbackComponents.forEach( function(thisComponent) {
+    for (const thisComponent of feedbackComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
@@ -2325,6 +2159,9 @@ function feedbackRoutineEnd(snapshot) {
   }
 }
 
+var _sharenextphoto_key_allKeys;
+var sharenextphoto_key_allKeys;
+var continuesharingComponents;
 function continuesharingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2339,7 +2176,7 @@ function continuesharingRoutineBegin(snapshot) {
     sharenextphoto_key.rt = undefined;
     _sharenextphoto_key_allKeys = [];
     // Run 'Begin Routine' code from hidecontinuesharingroutine_code
-    if ((startlottery === 2)) {
+    if ((startWTP === 1)) {
         continueRoutine = false;
     } else {
         continueRoutine = true;
@@ -2350,10 +2187,9 @@ function continuesharingRoutineBegin(snapshot) {
     continuesharingComponents.push(presstosharenextphoto_text);
     continuesharingComponents.push(sharenextphoto_key);
     
-    continuesharingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of continuesharingComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -2410,11 +2246,11 @@ function continuesharingRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    continuesharingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of continuesharingComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -2428,11 +2264,11 @@ function continuesharingRoutineEachFrame() {
 function continuesharingRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'continuesharing' ---
-    continuesharingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of continuesharingComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(sharenextphoto_key.corr, level);
@@ -2444,6 +2280,17 @@ function continuesharingRoutineEnd(snapshot) {
         }
     
     sharenextphoto_key.stop();
+    // Run 'End Routine' code from hidecontinuesharingroutine_code
+    trialset = function () {
+        var _pj_a = [], _pj_b = trialset;
+        for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
+            var i = _pj_b[_pj_c];
+            _pj_a.push((i + 5));
+        }
+        return _pj_a;
+    }
+    .call(this);
+    
     // the Routine "continuesharing" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2455,537 +2302,82 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
-function ChoiceRoutineBegin(snapshot) {
+var _WTP_ins_keys1_allKeys;
+var WTP_ins_keys1_allKeys;
+var WTP_Instructions1Components;
+function WTP_Instructions1RoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //--- Prepare to start Routine 'Choice' ---
+    //--- Prepare to start Routine 'WTP_Instructions1' ---
     t = 0;
-    ChoiceClock.reset(); // clock
+    WTP_Instructions1Clock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(5.000000);
     // update component parameters for each repeat
-    choice_keys.keys = undefined;
-    choice_keys.rt = undefined;
-    _choice_keys_allKeys = [];
+    WTP_ins_keys1.keys = undefined;
+    WTP_ins_keys1.rt = undefined;
+    _WTP_ins_keys1_allKeys = [];
     // keep track of which components have finished
-    ChoiceComponents = [];
-    ChoiceComponents.push(Experiencechoice_text);
-    ChoiceComponents.push(computer_text);
-    ChoiceComponents.push(self_text);
-    ChoiceComponents.push(choice_keys);
+    WTP_Instructions1Components = [];
+    WTP_Instructions1Components.push(WTP_ins_text1);
+    WTP_Instructions1Components.push(WTP_ins_keys1);
     
-    ChoiceComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WTP_Instructions1Components)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
+
+    console.log(social_left);
+    console.log(left);
+    console.log(right);
+    console.log(WTP_ITI);
+    console.log(leftmoney);
+    console.log(rightmoney);
+    console.log(greenText);
+    console.log(left_more_than_right);
+    console.log(matching_prices);
+    console.log(social_worthmore);
+    
   }
 }
 
-function ChoiceRoutineEachFrame() {
+function WTP_Instructions1RoutineEachFrame() {
   return async function () {
-    //--- Loop for each frame of Routine 'Choice' ---
+    //--- Loop for each frame of Routine 'WTP_Instructions1' ---
     // get current time
-    t = ChoiceClock.getTime();
+    t = WTP_Instructions1Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     
-    // *Experiencechoice_text* updates
-    if (t >= 0.0 && Experiencechoice_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *WTP_ins_text1* updates
+    if (t >= 0.0 && WTP_ins_text1.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      Experiencechoice_text.tStart = t;  // (not accounting for frame time here)
-      Experiencechoice_text.frameNStart = frameN;  // exact frame index
+      WTP_ins_text1.tStart = t;  // (not accounting for frame time here)
+      WTP_ins_text1.frameNStart = frameN;  // exact frame index
       
-      Experiencechoice_text.setAutoDraw(true);
+      WTP_ins_text1.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Experiencechoice_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Experiencechoice_text.setAutoDraw(false);
-    }
     
-    // *computer_text* updates
-    if (t >= 0.0 && computer_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *WTP_ins_keys1* updates
+    if (t >= 0.0 && WTP_ins_keys1.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      computer_text.tStart = t;  // (not accounting for frame time here)
-      computer_text.frameNStart = frameN;  // exact frame index
-      
-      computer_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (computer_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      computer_text.setAutoDraw(false);
-    }
-    
-    // *self_text* updates
-    if (t >= 0.0 && self_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      self_text.tStart = t;  // (not accounting for frame time here)
-      self_text.frameNStart = frameN;  // exact frame index
-      
-      self_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (self_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      self_text.setAutoDraw(false);
-    }
-    // Run 'Each Frame' code from setvariables_code
-    import * as random from 'random';
-    var random_entry;
-    random_entry = random.choice(computer_choice);
-    if ((choice_keys.keys === "c")) {
-        computer_text.setColor("green");
-    } else {
-        if ((choice_keys.keys === "s")) {
-            self_text.setColor("green");
-        }
-    }
-    
-    
-    // *choice_keys* updates
-    if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      choice_keys.tStart = t;  // (not accounting for frame time here)
-      choice_keys.frameNStart = frameN;  // exact frame index
+      WTP_ins_keys1.tStart = t;  // (not accounting for frame time here)
+      WTP_ins_keys1.frameNStart = frameN;  // exact frame index
       
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys1.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys1.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys1.clearEvents(); });
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      choice_keys.status = PsychoJS.Status.FINISHED;
-  }
-
-    if (choice_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
-      _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
-      if (_choice_keys_allKeys.length > 0) {
-        choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
-        choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
-      }
-    }
-    
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-    
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-    
-    continueRoutine = false;  // reverts to True if at least one component still running
-    ChoiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-      }
-    });
-    
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-function ChoiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Choice' ---
-    ChoiceComponents.forEach( function(thisComponent) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    });
-    // Run 'End Routine' code from setvariables_code
-    if ((choice_keys.keys === "c")) {
-        selfrunOrNot = 0;
-        comprunOrNot = 1;
-    } else {
-        if ((choice_keys.keys === "s")) {
-            selfrunOrNot = 1;
-            comprunOrNot = 0;
-        } else {
-            selfrunOrNot = 0;
-            comprunOrNot = 0;
-        }
-    }
-    computer_text.setColor("white");
-    self_text.setColor("white");
-    
-    // update the trial handler
-    if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(choice_keys.corr, level);
-    }
-    psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
-    if (typeof choice_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
-        }
-    
-    choice_keys.stop();
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function ExperiencecomputerchoiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-    
-    //--- Prepare to start Routine 'Experiencecomputerchoice' ---
-    t = 0;
-    ExperiencecomputerchoiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    // update component parameters for each repeat
-    // keep track of which components have finished
-    ExperiencecomputerchoiceComponents = [];
-    
-    ExperiencecomputerchoiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function ExperiencecomputerchoiceRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Experiencecomputerchoice' ---
-    // get current time
-    t = ExperiencecomputerchoiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-    
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-    
-    continueRoutine = false;  // reverts to True if at least one component still running
-    ExperiencecomputerchoiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-      }
-    });
-    
-    // refresh the screen if continuing
-    if (continueRoutine) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-function ExperiencecomputerchoiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Experiencecomputerchoice' ---
-    ExperiencecomputerchoiceComponents.forEach( function(thisComponent) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    });
-    // the Routine "Experiencecomputerchoice" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset();
-    
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function Experience_computer_choiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-    
-    //--- Prepare to start Routine 'Experience_computer_choice' ---
-    t = 0;
-    Experience_computer_choiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    routineTimer.add(8.000000);
-    // update component parameters for each repeat
-    Socialleft_text_2.setText(Left);
-    Socialright_text_2.setText(Right);
-    leftmoney_text_2.setText(leftmoney);
-    Rightmoney_text_2.setText(rightmoney);
-    Rightchoicekey_text_2.setText('');
-    // keep track of which components have finished
-    Experience_computer_choiceComponents = [];
-    Experience_computer_choiceComponents.push(Socialleft_text_2);
-    Experience_computer_choiceComponents.push(Socialright_text_2);
-    Experience_computer_choiceComponents.push(leftmoney_text_2);
-    Experience_computer_choiceComponents.push(Rightmoney_text_2);
-    Experience_computer_choiceComponents.push(OR_text_2);
-    Experience_computer_choiceComponents.push(Leftchoicekey_text_2);
-    Experience_computer_choiceComponents.push(Rightchoicekey_text_2);
-    Experience_computer_choiceComponents.push(blank);
-    
-    Experience_computer_choiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function Experience_computer_choiceRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Experience_computer_choice' ---
-    // get current time
-    t = Experience_computer_choiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    
-    // *Socialleft_text_2* updates
-    if (t >= 0.0 && Socialleft_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Socialleft_text_2.tStart = t;  // (not accounting for frame time here)
-      Socialleft_text_2.frameNStart = frameN;  // exact frame index
-      
-      Socialleft_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Socialleft_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Socialleft_text_2.setAutoDraw(false);
-    }
-    
-    // *Socialright_text_2* updates
-    if (t >= 0.0 && Socialright_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Socialright_text_2.tStart = t;  // (not accounting for frame time here)
-      Socialright_text_2.frameNStart = frameN;  // exact frame index
-      
-      Socialright_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Socialright_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Socialright_text_2.setAutoDraw(false);
-    }
-    
-    // *leftmoney_text_2* updates
-    if (t >= 0.0 && leftmoney_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      leftmoney_text_2.tStart = t;  // (not accounting for frame time here)
-      leftmoney_text_2.frameNStart = frameN;  // exact frame index
-      
-      leftmoney_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (leftmoney_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      leftmoney_text_2.setAutoDraw(false);
-    }
-    
-    // *Rightmoney_text_2* updates
-    if (t >= 0 && Rightmoney_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Rightmoney_text_2.tStart = t;  // (not accounting for frame time here)
-      Rightmoney_text_2.frameNStart = frameN;  // exact frame index
-      
-      Rightmoney_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Rightmoney_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Rightmoney_text_2.setAutoDraw(false);
-    }
-    
-    // *OR_text_2* updates
-    if (t >= 0.0 && OR_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      OR_text_2.tStart = t;  // (not accounting for frame time here)
-      OR_text_2.frameNStart = frameN;  // exact frame index
-      
-      OR_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (OR_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      OR_text_2.setAutoDraw(false);
-    }
-    
-    // *Leftchoicekey_text_2* updates
-    if (t >= 0.0 && Leftchoicekey_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Leftchoicekey_text_2.tStart = t;  // (not accounting for frame time here)
-      Leftchoicekey_text_2.frameNStart = frameN;  // exact frame index
-      
-      Leftchoicekey_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Leftchoicekey_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Leftchoicekey_text_2.setAutoDraw(false);
-    }
-    
-    // *Rightchoicekey_text_2* updates
-    if (t >= 0.0 && Rightchoicekey_text_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Rightchoicekey_text_2.tStart = t;  // (not accounting for frame time here)
-      Rightchoicekey_text_2.frameNStart = frameN;  // exact frame index
-      
-      Rightchoicekey_text_2.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Rightchoicekey_text_2.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Rightchoicekey_text_2.setAutoDraw(false);
-    }
-    
-    // *blank* updates
-    if (t >= 6 && blank.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      blank.tStart = t;  // (not accounting for frame time here)
-      blank.frameNStart = frameN;  // exact frame index
-      
-      blank.setAutoDraw(true);
-    }
-
-    frameRemains = 6 + 2 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (blank.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      blank.setAutoDraw(false);
-    }
-    // Run 'Each Frame' code from displaylotterychoice_code_2
-    if ((blank.status === PsychoJS.Status.STARTED)) {
-        if ((random_entry === "Left")) {
-            Socialleft_text_2.setColor("green");
-        } else {
-            if ((random_entry === "Right")) {
-                Socialright_text_2.setColor("green");
-            }
-        }
-    }
-    
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-    
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-    
-    continueRoutine = false;  // reverts to True if at least one component still running
-    Experience_computer_choiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-      }
-    });
-    
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-function Experience_computer_choiceRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Experience_computer_choice' ---
-    Experience_computer_choiceComponents.forEach( function(thisComponent) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    });
-    // Run 'End Routine' code from displaylotterychoice_code_2
-    Socialleft_text_2.setColor("white");
-    Socialright_text_2.setColor("white");
-    
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function SchoiceRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-    
-    //--- Prepare to start Routine 'Schoice' ---
-    t = 0;
-    SchoiceClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    // update component parameters for each repeat
-    key_resp_2.keys = undefined;
-    key_resp_2.rt = undefined;
-    _key_resp_2_allKeys = [];
-    // keep track of which components have finished
-    SchoiceComponents = [];
-    SchoiceComponents.push(SelfChoiceExperiences);
-    SchoiceComponents.push(key_resp_2);
-    
-    SchoiceComponents.forEach( function(thisComponent) {
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
-    return Scheduler.Event.NEXT;
-  }
-}
-
-function SchoiceRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Schoice' ---
-    // get current time
-    t = SchoiceClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    
-    // *SelfChoiceExperiences* updates
-    if (t >= 0.0 && SelfChoiceExperiences.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      SelfChoiceExperiences.tStart = t;  // (not accounting for frame time here)
-      SelfChoiceExperiences.frameNStart = frameN;  // exact frame index
-      
-      SelfChoiceExperiences.setAutoDraw(true);
-    }
-
-    
-    // *key_resp_2* updates
-    if (t >= 0.0 && key_resp_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      key_resp_2.tStart = t;  // (not accounting for frame time here)
-      key_resp_2.frameNStart = frameN;  // exact frame index
-      
-      // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { key_resp_2.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { key_resp_2.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { key_resp_2.clearEvents(); });
-    }
-
-    if (key_resp_2.status === PsychoJS.Status.STARTED) {
-      let theseKeys = key_resp_2.getKeys({keyList: ['space'], waitRelease: false});
-      _key_resp_2_allKeys = _key_resp_2_allKeys.concat(theseKeys);
-      if (_key_resp_2_allKeys.length > 0) {
-        key_resp_2.keys = _key_resp_2_allKeys[_key_resp_2_allKeys.length - 1].name;  // just the last key pressed
-        key_resp_2.rt = _key_resp_2_allKeys[_key_resp_2_allKeys.length - 1].rt;
+    if (WTP_ins_keys1.status === PsychoJS.Status.STARTED) {
+      let theseKeys = WTP_ins_keys1.getKeys({keyList: ['space'], waitRelease: false});
+      _WTP_ins_keys1_allKeys = _WTP_ins_keys1_allKeys.concat(theseKeys);
+      if (_WTP_ins_keys1_allKeys.length > 0) {
+        WTP_ins_keys1.keys = _WTP_ins_keys1_allKeys[_WTP_ins_keys1_allKeys.length - 1].name;  // just the last key pressed
+        WTP_ins_keys1.rt = _WTP_ins_keys1_allKeys[_WTP_ins_keys1_allKeys.length - 1].rt;
         // a response ends the routine
         continueRoutine = false;
       }
@@ -3002,11 +2394,11 @@ function SchoiceRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    SchoiceComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WTP_Instructions1Components)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -3017,26 +2409,26 @@ function SchoiceRoutineEachFrame() {
   };
 }
 
-function SchoiceRoutineEnd(snapshot) {
+function WTP_Instructions1RoutineEnd(snapshot) {
   return async function () {
-    //--- Ending Routine 'Schoice' ---
-    SchoiceComponents.forEach( function(thisComponent) {
+    //--- Ending Routine 'WTP_Instructions1' ---
+    for (const thisComponent of WTP_Instructions1Components) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(key_resp_2.corr, level);
+      currentLoop.addResponse(WTP_ins_keys1.corr, level);
     }
-    psychoJS.experiment.addData('key_resp_2.keys', key_resp_2.keys);
-    if (typeof key_resp_2.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('key_resp_2.rt', key_resp_2.rt);
+    psychoJS.experiment.addData('WTP_ins_keys1.keys', WTP_ins_keys1.keys);
+    if (typeof WTP_ins_keys1.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('WTP_ins_keys1.rt', WTP_ins_keys1.rt);
         routineTimer.reset();
         }
     
-    key_resp_2.stop();
-    // the Routine "Schoice" was not non-slip safe, so reset the non-slip timer
+    WTP_ins_keys1.stop();
+    // the Routine "WTP_Instructions1" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
     // Routines running outside a loop should always advance the datafile row
@@ -3047,202 +2439,375 @@ function SchoiceRoutineEnd(snapshot) {
   }
 }
 
-function ExperienceselfchoiceRoutineBegin(snapshot) {
+var _WTP_ins_keys2_allKeys;
+var WTP_ins_keys2_allKeys;
+var WTP_Instructions2Components;
+function WTP_Instructions2RoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //--- Prepare to start Routine 'Experienceselfchoice' ---
+    //--- Prepare to start Routine 'WTP_Instructions2' ---
     t = 0;
-    ExperienceselfchoiceClock.reset(); // clock
+    WTP_Instructions2Clock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
-    Socialleft_text.setText(Left);
-    Socialright_text.setText(Right);
-    leftmoney_text.setText(leftmoney);
-    experiencechoice_keys.keys = undefined;
-    experiencechoice_keys.rt = undefined;
-    _experiencechoice_keys_allKeys = [];
-    responsefeedback.setText(feedback_msg);
-    Rightmoney_text.setText(rightmoney);
-    Rightchoicekey_text.setText('[y]');
+    WTP_ins_keys2.keys = undefined;
+    WTP_ins_keys2.rt = undefined;
+    _WTP_ins_keys2_allKeys = [];
     // keep track of which components have finished
-    ExperienceselfchoiceComponents = [];
-    ExperienceselfchoiceComponents.push(Socialleft_text);
-    ExperienceselfchoiceComponents.push(Socialright_text);
-    ExperienceselfchoiceComponents.push(leftmoney_text);
-    ExperienceselfchoiceComponents.push(experiencechoice_keys);
-    ExperienceselfchoiceComponents.push(responsefeedback);
-    ExperienceselfchoiceComponents.push(Rightmoney_text);
-    ExperienceselfchoiceComponents.push(OR_text);
-    ExperienceselfchoiceComponents.push(Leftchoicekey_text);
-    ExperienceselfchoiceComponents.push(Rightchoicekey_text);
+    WTP_Instructions2Components = [];
+    WTP_Instructions2Components.push(WTP_ins_text2);
+    WTP_Instructions2Components.push(WTP_ins_keys2);
     
-    ExperienceselfchoiceComponents.forEach( function(thisComponent) {
+    for (const thisComponent of WTP_Instructions2Components)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
 
-function ExperienceselfchoiceRoutineEachFrame() {
+function WTP_Instructions2RoutineEachFrame() {
   return async function () {
-    //--- Loop for each frame of Routine 'Experienceselfchoice' ---
+    //--- Loop for each frame of Routine 'WTP_Instructions2' ---
     // get current time
-    t = ExperienceselfchoiceClock.getTime();
+    t = WTP_Instructions2Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     
-    // *Socialleft_text* updates
-    if (t >= 0.0 && Socialleft_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *WTP_ins_text2* updates
+    if (t >= 0.0 && WTP_ins_text2.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      Socialleft_text.tStart = t;  // (not accounting for frame time here)
-      Socialleft_text.frameNStart = frameN;  // exact frame index
+      WTP_ins_text2.tStart = t;  // (not accounting for frame time here)
+      WTP_ins_text2.frameNStart = frameN;  // exact frame index
       
-      Socialleft_text.setAutoDraw(true);
+      WTP_ins_text2.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Socialleft_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Socialleft_text.setAutoDraw(false);
-    }
     
-    // *Socialright_text* updates
-    if (t >= 0.0 && Socialright_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *WTP_ins_keys2* updates
+    if (t >= 0.0 && WTP_ins_keys2.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      Socialright_text.tStart = t;  // (not accounting for frame time here)
-      Socialright_text.frameNStart = frameN;  // exact frame index
-      
-      Socialright_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Socialright_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Socialright_text.setAutoDraw(false);
-    }
-    
-    // *leftmoney_text* updates
-    if (t >= 0.0 && leftmoney_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      leftmoney_text.tStart = t;  // (not accounting for frame time here)
-      leftmoney_text.frameNStart = frameN;  // exact frame index
-      
-      leftmoney_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (leftmoney_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      leftmoney_text.setAutoDraw(false);
-    }
-    
-    // *experiencechoice_keys* updates
-    if (t >= 0 && experiencechoice_keys.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      experiencechoice_keys.tStart = t;  // (not accounting for frame time here)
-      experiencechoice_keys.frameNStart = frameN;  // exact frame index
+      WTP_ins_keys2.tStart = t;  // (not accounting for frame time here)
+      WTP_ins_keys2.frameNStart = frameN;  // exact frame index
       
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { experiencechoice_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { experiencechoice_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { experiencechoice_keys.clearEvents(); });
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys2.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys2.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { WTP_ins_keys2.clearEvents(); });
     }
 
-    frameRemains = 0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (experiencechoice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      experiencechoice_keys.status = PsychoJS.Status.FINISHED;
-  }
-
-    if (experiencechoice_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = experiencechoice_keys.getKeys({keyList: ['x', 'y'], waitRelease: false});
-      _experiencechoice_keys_allKeys = _experiencechoice_keys_allKeys.concat(theseKeys);
-      if (_experiencechoice_keys_allKeys.length > 0) {
-        experiencechoice_keys.keys = _experiencechoice_keys_allKeys[0].name;  // just the first key pressed
-        experiencechoice_keys.rt = _experiencechoice_keys_allKeys[0].rt;
+    if (WTP_ins_keys2.status === PsychoJS.Status.STARTED) {
+      let theseKeys = WTP_ins_keys2.getKeys({keyList: ['space'], waitRelease: false});
+      _WTP_ins_keys2_allKeys = _WTP_ins_keys2_allKeys.concat(theseKeys);
+      if (_WTP_ins_keys2_allKeys.length > 0) {
+        WTP_ins_keys2.keys = _WTP_ins_keys2_allKeys[_WTP_ins_keys2_allKeys.length - 1].name;  // just the last key pressed
+        WTP_ins_keys2.rt = _WTP_ins_keys2_allKeys[_WTP_ins_keys2_allKeys.length - 1].rt;
+        // a response ends the routine
+        continueRoutine = false;
       }
     }
     
-    // Run 'Each Frame' code from displaylotterychoice_code
-    if ((experiencechoice_keys.keys === "x")) {
-        Socialleft_text.setColor("green");
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of WTP_Instructions2Components)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
     } else {
-        if ((experiencechoice_keys.keys === "y")) {
-            Socialright_text.setColor("green");
-        } else {
-            feedback_msg = `.`;
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function WTP_Instructions2RoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'WTP_Instructions2' ---
+    for (const thisComponent of WTP_Instructions2Components) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(WTP_ins_keys2.corr, level);
+    }
+    psychoJS.experiment.addData('WTP_ins_keys2.keys', WTP_ins_keys2.keys);
+    if (typeof WTP_ins_keys2.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('WTP_ins_keys2.rt', WTP_ins_keys2.rt);
+        routineTimer.reset();
+        }
+    
+    WTP_ins_keys2.stop();
+    // the Routine "WTP_Instructions2" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
+var _responses_allKeys;
+var responses_allKeys;
+var WTPTaskComponents;
+
+function WTPTaskRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'WTPTask' ---
+    t = 0;
+    WTPTaskClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    routineTimer.add(10.000000);
+    // update component parameters for each repeat
+
+    Left_Experience.setColor(new util.Color('white'));
+    Left_Experience.setText(left);
+    Right_Experience.setColor(new util.Color('white'));
+    Right_Experience.setText(right);
+    Left_Price.setText(leftmoney);
+    Right_Price.setColor(new util.Color('white'));
+    Right_Price.setText(rightmoney);
+    responses.keys = undefined;
+    responses.rt = undefined;
+    _responses_allKeys = [];
+    // keep track of which components have finished
+    WTPTaskComponents = [];
+    WTPTaskComponents.push(Left_Experience);
+    WTPTaskComponents.push(Right_Experience);
+    WTPTaskComponents.push(Left_Price);
+    WTPTaskComponents.push(Right_Price);
+    WTPTaskComponents.push(responses);
+    
+    for (const thisComponent of WTPTaskComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+var continueRoutine;
+var frameRemains;
+var t;
+function WTPTaskRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'WTPTask' ---
+    // get current time
+    t = WTPTaskClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *Left_Experience* updates
+    if (t >= 0.0 && Left_Experience.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      Left_Experience.tStart = t;  // (not accounting for frame time here)
+      Left_Experience.frameNStart = frameN;  // exact frame index
+      
+      Left_Experience.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (Left_Experience.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      Left_Experience.setAutoDraw(false);
+    }
+    
+    // *Right_Experience* updates
+    if (t >= 0.0 && Right_Experience.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      Right_Experience.tStart = t;  // (not accounting for frame time here)
+      Right_Experience.frameNStart = frameN;  // exact frame index
+      
+      Right_Experience.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (Right_Experience.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      Right_Experience.setAutoDraw(false);
+    }
+    
+    // *Left_Price* updates
+    if (t >= 0.0 && Left_Price.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      Left_Price.tStart = t;  // (not accounting for frame time here)
+      Left_Price.frameNStart = frameN;  // exact frame index
+      
+      Left_Price.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (Left_Price.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      Left_Price.setAutoDraw(false);
+    }
+    
+    // *Right_Price* updates
+    if (t >= 0.0 && Right_Price.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      Right_Price.tStart = t;  // (not accounting for frame time here)
+      Right_Price.frameNStart = frameN;  // exact frame index
+      
+      Right_Price.setAutoDraw(true);
+    }
+
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (Right_Price.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      Right_Price.setAutoDraw(false);
+    }
+    
+    // *responses* updates
+    if (t >= 0.0 && responses.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      responses.tStart = t;  // (not accounting for frame time here)
+      responses.frameNStart = frameN;  // exact frame index
+      
+      // keyboard checking is just starting
+      psychoJS.window.callOnFlip(function() { responses.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { responses.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { responses.clearEvents(); });
+    }
+
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (responses.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      responses.status = PsychoJS.Status.FINISHED;
+  }
+
+    if (responses.status === PsychoJS.Status.STARTED) {
+      let theseKeys = responses.getKeys({keyList: ['1', '2'], waitRelease: false});
+      _responses_allKeys = _responses_allKeys.concat(theseKeys);
+      if (_responses_allKeys.length > 0) {
+        responses.keys = _responses_allKeys[0].name;  // just the first key pressed
+        responses.rt = _responses_allKeys[0].rt;
+      }
+    }
+    
+    // Run 'Each Frame' code from responses_code
+    if ((responses.keys === "1")) {
+        Left_Experience.setColor("green");
+    } else {
+        if ((responses.keys === "2")) {
+            Right_Experience.setColor("green");
         }
     }
-    responsefeedback.setText(feedback_msg);
     
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
     
-    // *responsefeedback* updates
-    if (t >= 0.0 && responsefeedback.status === PsychoJS.Status.NOT_STARTED) {
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of WTPTaskComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine && routineTimer.getTime() > 0) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function WTPTaskRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'WTPTask' ---
+    for (const thisComponent of WTPTaskComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(responses.corr, level);
+    }
+    psychoJS.experiment.addData('responses.keys', responses.keys);
+    if (typeof responses.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('responses.rt', responses.rt);
+        }
+    
+    responses.stop();
+    // Run 'End Routine' code from responses_code
+    Left_Experience.setColor("white");
+    Right_Experience.setColor("white");
+    continueRoutine = false;
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+var ITIComponents; 
+function ITIRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'ITI' ---
+    t = 0;
+    ITIClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    ITI_text.setText('+');
+    // keep track of which components have finished
+    ITIComponents = [];
+    ITIComponents.push(ITI_text);
+    
+    for (const thisComponent of ITIComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+var continueRoutine;
+var frameRemains;
+var t;
+
+function ITIRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'ITI' ---
+    // get current time
+    t = ITIClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *ITI_text* updates
+    if (t >= 0.0 && ITI_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      responsefeedback.tStart = t;  // (not accounting for frame time here)
-      responsefeedback.frameNStart = frameN;  // exact frame index
+      ITI_text.tStart = t;  // (not accounting for frame time here)
+      ITI_text.frameNStart = frameN;  // exact frame index
       
-      responsefeedback.setAutoDraw(true);
+      ITI_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (responsefeedback.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      responsefeedback.setAutoDraw(false);
-    }
-    
-    // *Rightmoney_text* updates
-    if (t >= 0.0 && Rightmoney_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Rightmoney_text.tStart = t;  // (not accounting for frame time here)
-      Rightmoney_text.frameNStart = frameN;  // exact frame index
-      
-      Rightmoney_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Rightmoney_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Rightmoney_text.setAutoDraw(false);
-    }
-    
-    // *OR_text* updates
-    if (t >= 0.0 && OR_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      OR_text.tStart = t;  // (not accounting for frame time here)
-      OR_text.frameNStart = frameN;  // exact frame index
-      
-      OR_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (OR_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      OR_text.setAutoDraw(false);
-    }
-    
-    // *Leftchoicekey_text* updates
-    if (t >= 0.0 && Leftchoicekey_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Leftchoicekey_text.tStart = t;  // (not accounting for frame time here)
-      Leftchoicekey_text.frameNStart = frameN;  // exact frame index
-      
-      Leftchoicekey_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Leftchoicekey_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Leftchoicekey_text.setAutoDraw(false);
-    }
-    
-    // *Rightchoicekey_text* updates
-    if (t >= 0.0 && Rightchoicekey_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      Rightchoicekey_text.tStart = t;  // (not accounting for frame time here)
-      Rightchoicekey_text.frameNStart = frameN;  // exact frame index
-      
-      Rightchoicekey_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 8.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (Rightchoicekey_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      Rightchoicekey_text.setAutoDraw(false);
+    frameRemains = 0.0 + WTP_ITI - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    if (ITI_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      ITI_text.setAutoDraw(false);
     }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
@@ -3255,11 +2820,11 @@ function ExperienceselfchoiceRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    ExperienceselfchoiceComponents.forEach( function(thisComponent) {
+    for (const thisComponent of ITIComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -3270,27 +2835,16 @@ function ExperienceselfchoiceRoutineEachFrame() {
   };
 }
 
-function ExperienceselfchoiceRoutineEnd(snapshot) {
+function ITIRoutineEnd(snapshot) {
   return async function () {
-    //--- Ending Routine 'Experienceselfchoice' ---
-    ExperienceselfchoiceComponents.forEach( function(thisComponent) {
+    //--- Ending Routine 'ITI' ---
+    for (const thisComponent of ITIComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
-    // update the trial handler
-    if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(experiencechoice_keys.corr, level);
     }
-    psychoJS.experiment.addData('experiencechoice_keys.keys', experiencechoice_keys.keys);
-    if (typeof experiencechoice_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('experiencechoice_keys.rt', experiencechoice_keys.rt);
-        }
-    
-    experiencechoice_keys.stop();
-    // Run 'End Routine' code from displaylotterychoice_code
-    Socialleft_text.setColor("white");
-    Socialright_text.setColor("white");
+    // the Routine "ITI" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
     
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
@@ -3300,6 +2854,9 @@ function ExperienceselfchoiceRoutineEnd(snapshot) {
   }
 }
 
+var continueRoutine;
+var frameRemains;
+var t;
 function ContinueRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3314,25 +2871,20 @@ function ContinueRoutineBegin(snapshot) {
     if (((TrialNumber % 30) === 0)) {
         continueRoutine = false;
     }
-    if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
-        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please respond withtin 3 seconds on your next opportunity. \n\nPress space to continue.";
-    } else {
-        resumetext = "Press space to resume sharing your photos.";
-    }
+    resumetext = "Press space to resume sharing your photos.";
     
-    resumeafterexperience_keys.keys = undefined;
-    resumeafterexperience_keys.rt = undefined;
-    _resumeafterexperience_keys_allKeys = [];
-    resumetext_text.setText(resumetext);
+    Resume_keys.keys = undefined;
+    Resume_keys.rt = undefined;
+    _Resume_keys_allKeys = [];
+    Resume_Text.setText(resumetext);
     // keep track of which components have finished
     ContinueComponents = [];
-    ContinueComponents.push(resumeafterexperience_keys);
-    ContinueComponents.push(resumetext_text);
+    ContinueComponents.push(Resume_keys);
+    ContinueComponents.push(Resume_Text);
     
-    ContinueComponents.forEach( function(thisComponent) {
+    for (const thisComponent of ContinueComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -3345,37 +2897,37 @@ function ContinueRoutineEachFrame() {
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     
-    // *resumeafterexperience_keys* updates
-    if (t >= 0.0 && resumeafterexperience_keys.status === PsychoJS.Status.NOT_STARTED) {
+    // *Resume_keys* updates
+    if (t >= 0.0 && Resume_keys.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      resumeafterexperience_keys.tStart = t;  // (not accounting for frame time here)
-      resumeafterexperience_keys.frameNStart = frameN;  // exact frame index
+      Resume_keys.tStart = t;  // (not accounting for frame time here)
+      Resume_keys.frameNStart = frameN;  // exact frame index
       
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { resumeafterexperience_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { resumeafterexperience_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { resumeafterexperience_keys.clearEvents(); });
+      psychoJS.window.callOnFlip(function() { Resume_keys.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { Resume_keys.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { Resume_keys.clearEvents(); });
     }
 
-    if (resumeafterexperience_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = resumeafterexperience_keys.getKeys({keyList: ['space'], waitRelease: false});
-      _resumeafterexperience_keys_allKeys = _resumeafterexperience_keys_allKeys.concat(theseKeys);
-      if (_resumeafterexperience_keys_allKeys.length > 0) {
-        resumeafterexperience_keys.keys = _resumeafterexperience_keys_allKeys[0].name;  // just the first key pressed
-        resumeafterexperience_keys.rt = _resumeafterexperience_keys_allKeys[0].rt;
+    if (Resume_keys.status === PsychoJS.Status.STARTED) {
+      let theseKeys = Resume_keys.getKeys({keyList: ['space'], waitRelease: false});
+      _Resume_keys_allKeys = _Resume_keys_allKeys.concat(theseKeys);
+      if (_Resume_keys_allKeys.length > 0) {
+        Resume_keys.keys = _Resume_keys_allKeys[0].name;  // just the first key pressed
+        Resume_keys.rt = _Resume_keys_allKeys[0].rt;
         // a response ends the routine
         continueRoutine = false;
       }
     }
     
     
-    // *resumetext_text* updates
-    if (t >= 0.0 && resumetext_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *Resume_Text* updates
+    if (t >= 0.0 && Resume_Text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      resumetext_text.tStart = t;  // (not accounting for frame time here)
-      resumetext_text.frameNStart = frameN;  // exact frame index
+      Resume_Text.tStart = t;  // (not accounting for frame time here)
+      Resume_Text.frameNStart = frameN;  // exact frame index
       
-      resumetext_text.setAutoDraw(true);
+      Resume_Text.setAutoDraw(true);
     }
 
     // check for quit (typically the Esc key)
@@ -3389,11 +2941,11 @@ function ContinueRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    ContinueComponents.forEach( function(thisComponent) {
+    for (const thisComponent of ContinueComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -3407,22 +2959,22 @@ function ContinueRoutineEachFrame() {
 function ContinueRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Continue' ---
-    ContinueComponents.forEach( function(thisComponent) {
+    for (const thisComponent of ContinueComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(resumeafterexperience_keys.corr, level);
+      currentLoop.addResponse(Resume_keys.corr, level);
     }
-    psychoJS.experiment.addData('resumeafterexperience_keys.keys', resumeafterexperience_keys.keys);
-    if (typeof resumeafterexperience_keys.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('resumeafterexperience_keys.rt', resumeafterexperience_keys.rt);
+    psychoJS.experiment.addData('Resume_keys.keys', Resume_keys.keys);
+    if (typeof Resume_keys.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('Resume_keys.rt', Resume_keys.rt);
         routineTimer.reset();
         }
     
-    resumeafterexperience_keys.stop();
+    Resume_keys.stop();
     // the Routine "Continue" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -3434,6 +2986,9 @@ function ContinueRoutineEnd(snapshot) {
   }
 }
 
+var _key_resp_allKeys;
+var key_resp_allKeys;
+var SalienceRatingComponents;
 function SalienceRatingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3469,14 +3024,13 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(saliencecontinue_text);
     SalienceRatingComponents.push(displayrating_text);
     
-    SalienceRatingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
-
+var keys;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
@@ -3595,11 +3149,11 @@ function SalienceRatingRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    SalienceRatingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -3613,11 +3167,11 @@ function SalienceRatingRoutineEachFrame() {
 function SalienceRatingRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'SalienceRating' ---
-    SalienceRatingComponents.forEach( function(thisComponent) {
+    for (const thisComponent of SalienceRatingComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Run 'End Routine' code from saliencyrating_code
     entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos(), 1));
     
@@ -3643,6 +3197,9 @@ function SalienceRatingRoutineEnd(snapshot) {
   }
 }
 
+var _stresslevel_keypress_allKeys;
+var stresslevel_keypress_allKeys;
+var StressLevelComponents;
 function StressLevelRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3676,10 +3233,9 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(stresslevel_keypress);
     StressLevelComponents.push(displaystressrating_text);
     
-    StressLevelComponents.forEach( function(thisComponent) {
+    for (const thisComponent of StressLevelComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-       });
     return Scheduler.Event.NEXT;
   }
 }
@@ -3782,11 +3338,11 @@ function StressLevelRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    StressLevelComponents.forEach( function(thisComponent) {
+    for (const thisComponent of StressLevelComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
+        break;
       }
-    });
     
     // refresh the screen if continuing
     if (continueRoutine) {
@@ -3800,11 +3356,11 @@ function StressLevelRoutineEachFrame() {
 function StressLevelRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'StressLevel' ---
-    StressLevelComponents.forEach( function(thisComponent) {
+    for (const thisComponent of StressLevelComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
-    });
+    }
     // Run 'End Routine' code from stresslevelslider
     stresslevel = stress_slider.getRating();
     entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos(), 1));
