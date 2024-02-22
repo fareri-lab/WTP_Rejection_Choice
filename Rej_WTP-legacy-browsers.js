@@ -92,7 +92,7 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
 
-    {'name': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`, 'path': `Participant_Images/${participantID}/${participantID}_WTP.xlsx`},
+    {'name': `Participant_Images/${participantID}/${participantID}_WTP.csv`, 'path': `Participant_Images/${participantID}/${participantID}_WTP.csv`},
     {'name': `Participant_Images/${participantID}/${participantID}_trials.csv`, 'path': `Participant_Images/${participantID}/${participantID}_trials.csv`},
     {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'},
     {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'},
@@ -602,7 +602,7 @@ async function experimentInit() {
   Right_Experience = new visual.TextStim({
     win: psychoJS.window,
     name: 'Right_Experience',
-    text: '',
+    text: 'undefined',
     font: 'Open Sans',
     units: undefined, 
     pos: [(- 0.5), 0.1], height: 0.05,  wrapWidth: undefined, ori: 0.0,
@@ -829,7 +829,7 @@ function Welcome_ScreenRoutineBegin(snapshot) {
     subid = expInfo["participant"];
     subjdir = `Participant_Images/${subid}`;
     trial_sheet = `${subjdir}/${subid}_trials.csv`;
-    wtp_sheet = `${subjdir}/${subid}_WTP.xlsx`;
+    wtp_sheet = `${subjdir}/${subid}_WTP.csv`;
     partnermatch = "";
     partneravatar = "";
     
@@ -1126,11 +1126,18 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-var Right_Exp;
-var Left_Exp;
-var leftmoney;
-var rightmoney;
+// var Right_Exp;
+// var Left_Exp;
+// var leftmoney;
+// var rightmoney;
 var startWTPloop;
+// var social_left;
+// var left;
+// var right;
+// var WTP_ITI;
+// var left_more_than_right;
+// var matching_prices;
+// var social_worthmore;
 function startWTPloopLoopBegin(startWTPloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
