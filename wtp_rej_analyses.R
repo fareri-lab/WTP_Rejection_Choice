@@ -19,17 +19,15 @@ library(sjPlot)
 library(lmtest)
 library(ggeffects)
 
-setwd("/Users/jordansiegel/Documents/Github/WTP_Rejection_Choice/scoring")
-rsq <- read.csv(file="rsq.csv", header =TRUE, sep = ',')
 
+#setwd("/Users/jordansiegel/Documents/Github/WTP_Rejection_Choice/scoring")
+
+#set directory
 setwd("/Users/jordansiegel/Documents/Github/WTP_Rejection_Choice/")
 
+#read in long form data and then short form data files
 wtp_rej_longdata<-read.csv(file="longformdata.csv",header=TRUE, sep=',')
-
 wtp_rej_shortdata<-read.csv(file="shortformdata.csv",header=TRUE, sep=',')
-
-
-
 
 #re-code acceptance from 2 to -1 for condition_recode and males from 0 to -1 in sex
 wtp_rej_longdata$condition_recode[wtp_rej_longdata$condition_recode==2]<- -1
@@ -39,10 +37,7 @@ wtp_rej_longdata$sex[wtp_rej_longdata$sex==0]<- -1
 wtp_rej_shortdata$condition_recode[wtp_rej_shortdata$condition_recode==2]<- -1
 wtp_rej_shortdata$sex[wtp_rej_shortdata$sex==0]<- -1
 
-#create anova dataframe
-
-
-# Create prop_nonsocialchoice as the absolute difference from 1
+# Create prop_nonsocialchoice variable as the absolute difference from 1 in short form data file
 wtp_rej_shortdata <- wtp_rej_shortdata %>%
   mutate(prop_nonsocialchoice = abs(prop_socialchoice - 1))
 
@@ -52,7 +47,7 @@ wtp_rej_longdata <- wtp_rej_longdata %>%
 # Check if the column was created correctly
 head(wtp_rej_shortdata)
 
-#create seperate variables with values for within each condition
+#separate short and long form data frames each into two data frames by condition
 # Subset data where condition_recode == 1
 rej <- wtp_rej_shortdata %>%
   filter(condition_recode == 1) %>%
@@ -73,54 +68,19 @@ acc_long <- wtp_rej_longdata %>%
   filter(condition_recode == -1) %>%
   as.data.frame()
 
+#change the column name from order to order_var
 colnames(wtp_rej_longdata)[colnames(wtp_rej_longdata) == "order"] <- "order_var"
 
-#extract social decision price mean from rej and acc dfs
-totalspent_soc_rej <- rej$social_decisionprice_mean
-totalspent_soc_acc <- acc$social_decisionprice_mean
+#t-tests 
 
-
-# Combine into a new data frame
-onebar_df <- data.frame(
-  rej_avgspent = totalspent_soc_rej,
-  acc_avgspent = totalspent_soc_acc
-)
-onebar_df$difference <- onebar_df$acc_avgspent - onebar_df$rej_avgspent
-
-# Mean and standard error of difference scores
-mean_diff <- mean(onebar_df$difference, na.rm = TRUE)
-se_diff <- sd(onebar_df$difference, na.rm = TRUE) / sqrt(sum(!is.na(onebar_df$difference)))
-
-# Put in summary dataframe for plotting
-summary_df <- data.frame(Difference = mean_diff, SE = se_diff)
-
-# Plot subject-level differences with group mean + SE
-scatter<-ggplot(onebar_df, aes(x = "", y = difference)) +
-  geom_jitter(width = 0.1, alpha = 0.5, color = "gray40") +  # each subject
-  stat_summary(fun = mean, geom = "point", size = 4, color = "darkseagreen4") +  # mean
-  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2, color = "darkseagreen4") +
-  ylab("Spending Difference (Acc – Rej)") +
-  xlab("Participants") +
-  ggtitle("") +
-  theme_minimal() + theme(
-    panel.grid = element_blank(),
-    axis.title.x = element_text(size = 26, face = "bold", margin = margin(t = 25)),
-    axis.title.y = element_text(size = 26, face = "bold", margin = margin(r = 25)),
-    axis.text.x = element_text(size = 24, face = "bold"),
-    axis.text.y = element_text(size = 24, face = "bold"),
-    legend.title = element_text(size = 24, face = "bold"),
-    legend.text = element_text(size = 22, face = "bold"),
-    plot.margin = margin(t = 20, r = 20, b = 20, l = 30)
-  )
-
-ggsave("scatter_diffspent_soc.png", plot = scatter, width = 10, height = 8, dpi = 300)
-
-# Run a paired t-test
+#t-test examining mean self-reported stress across conditions
 rej_acc_stress <- t.test(rej$stress_mean, 
-                                acc$stress_mean, 
-                                paired = TRUE, 
-                                alternative = "two.sided")
+                         acc$stress_mean, 
+                         paired = TRUE, 
+                         alternative = "two.sided")
 print(rej_acc_stress)
+
+#generate bar plot of self-reported mean stress across conditions
 
 # Compute difference scores for paired standard error
 diff_scores <- acc$stress_mean - rej$stress_mean
@@ -160,12 +120,15 @@ stress<- ggplot(summary_data, aes(x = condition, y = mean_stress, fill = conditi
 # Save the plot
 ggsave("stress.png", plot = stress, width = 10, height = 8, dpi = 300)
 
-# Run a paired t-test
+
+# Run a paired t-test of mean self-reported likelihood to share in the future across conditions
 rej_acc_salience <- t.test(rej$salience_mean, 
-                         acc$salience_mean, 
-                         paired = TRUE, 
-                         alternative = "two.sided")
+                           acc$salience_mean, 
+                           paired = TRUE, 
+                           alternative = "two.sided")
 print(rej_acc_salience)
+
+#generate a plot for the mean self-reported likelihood to share in the future across conditions
 
 # Compute difference scores for paired standard error
 diff_scores <- acc$salience_mean - rej$salience_mean
@@ -206,116 +169,7 @@ salience<- ggplot(summary_data, aes(x = condition, y = mean_salience, fill = con
 ggsave("salience.png", plot = salience, width = 10, height = 8, dpi = 300)
 
 
-
-
-# Save the plot
-ggsave("stress.png", plot = rej_acc_stress, width = 10, height = 8, dpi = 300)
-
-
-# Run a paired t-test
-rej_acc_decisionprice <- t.test(rej$social_decisionprice_mean, 
-                                acc$social_decisionprice_mean, 
-                                paired = TRUE, 
-                                alternative = "two.sided")
-
-# Print the results
-print(rej_acc_decisionprice)
-
-
-
-
-condition_choicetype <- glm(formula = socialchoice ~ condition_recode, family=binomial,data=wtp_rej_longdata)
-
-saliencecondition_choicetype_withregressors <- glm(formula = socialchoice ~ condition_recode + + salience_mean+ age + stress_mean+ sex + order_var +timebetween, family=binomial,data=wtp_rej_longdata)
-summary(saliencecondition_choicetype_withregressors)
-condition_choiceprice <- lmer(formula = decision_price ~ condition_recode +  (1 | participant), data = wtp_rej_longdata)
-
-condition_choiceprice_withregressors <- lmer(decision_price ~ condition_recode + age + order_var + sex + timebetween + (1 | participant),
-                                             data = wtp_rej_longdata)
-
-affect_choicetype <- glm(formula = socialchoice ~ stress_mean, family=binomial,data=wtp_rej_longdata)
-
-affect_choicetype_withregressors <- glm(formula = socialchoice ~ stress_mean + age + sex +order_var +timebetween, family=binomial,data=wtp_rej_longdata)
-
-affect_choiceprice <- lmer(formula = decision_price ~ stress_mean +  (1 | participant), data = wtp_rej_longdata)
-
-interaction_choicetype_withregressors <- glm(formula = socialchoice ~ condition_recode * stress_mean + age + sex +order_var +timebetween, family=binomial,data=wtp_rej_longdata)
-
-salienceinteraction_choicetype_withregressors <- glm(formula = socialchoice ~ condition_recode * salience_mean + age + sex +order_var +timebetween, family=binomial,data=wtp_rej_longdata)
-
-saliencestressinteraction_choicetype_withregressors <- glm(formula = socialchoice ~ stress_mean * salience_mean + age + condition_recode+ sex +order_var +timebetween, family=binomial,data=wtp_rej_longdata)
-
-
-
-# Function to calculate Standard Deviation safely
-safe_sd <- function(x) {
-  if (length(na.omit(x)) > 1) {
-    return(sd(x, na.rm = TRUE))
-  } else {
-    return(NA)
-  }
-}
-
-# ✅ Correct Filtering: Rejection = 1, Acceptance = -1
-rej_long <- wtp_rej_longdata %>% filter(condition_recode == 1)   # Rejection
-acc_long <- wtp_rej_longdata %>% filter(condition_recode == -1)  # Acceptance
-
-# Compute Mean Decision Price for Each Condition
-mean_data <- wtp_rej_longdata %>%
-  group_by(condition_recode) %>%
-  summarise(
-    mean_spent = mean(social_decisionprice_mean, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-# Compute SD separately for Rejection and Acceptance
-sd_rej <- safe_sd(rej_long$social_decisionprice_mean)
-sd_acc <- safe_sd(acc_long$social_decisionprice_mean)
-
-# ✅ Debugging: Ensure SDs exist
-print(paste("SD for Rejection:", sd_rej))
-print(paste("SD for Acceptance:", sd_acc))
-
-# ✅ Assign SD values correctly
-summary_data <- mean_data %>%
-  mutate(
-    sd_spent = c(sd_rej, sd_acc),  # ✅ Correct order of SD assignment
-    condition_recode = factor(condition_recode, levels = c(1, -1), labels = c("Rejection", "Acceptance"))  # ✅ Correct ordering
-  )
-
-# ✅ Debugging: Check if both conditions appear
-print(summary_data)
-
-# Plot: Amount Spent on Social by Condition
-amtspent <- ggplot(summary_data, aes(x = condition_recode, y = mean_spent, fill = condition_recode)) +
-  geom_bar(stat = "identity", position = position_dodge(), color = "black", alpha = 0.8) +
-  geom_errorbar(aes(ymin = mean_spent - sd_spent, ymax = mean_spent + sd_spent), 
-                width = 0.1, position = position_dodge(.9), color = "black", size = 0.8) +
-  scale_fill_manual(name = "Condition", values = c("Rejection" = "#FF6F61", "Acceptance" = "#88CCEE")) +
-  labs(
-    x = "Social Condition",
-    y = "Amount Spent on Social"
-  ) +
-  theme_minimal() +
-  theme(
-    panel.grid = element_blank(),
-    axis.title.x = element_text(size = 26, face = "bold", margin = margin(t = 25)),
-    axis.title.y = element_text(size = 26, face = "bold", margin = margin(r = 25)),
-    axis.text.x = element_text(size = 24, face = "bold"),
-    axis.text.y = element_text(size = 24, face = "bold"),
-    legend.title = element_text(size = 24, face = "bold"),
-    legend.text = element_text(size = 22, face = "bold"),
-    plot.margin = margin(t = 20, r = 20, b = 20, l = 30)
-  )
-
-# Save the plot
-ggsave("avgspent_social_rejvacc_plot_fixed.png", plot = amtspent, width = 10, height = 8, dpi = 300)
-
-#################################################
-
-
-####################################
-# Run a paired t-test
+# Run a paired t-test comparing the proportion of social choices made to non social choices overall
 overall_propsoc <- t.test(rej$prop_socialchoice, 
                           rej$prop_nonsocialchoice, 
                           paired = TRUE, 
@@ -333,7 +187,7 @@ safe_se <- function(x) {
   }
 }
 
-# Compute SEM separately for prop_socialchoice and prop_nonsocialchoice from the rej dataframe
+# Compute SEM separately for prop_socialchoice and prop_nonsocialchoice overall
 sem_social <- safe_se(rej$prop_socialchoice)
 sem_nonsocial <- safe_se(rej$prop_nonsocialchoice)
 
@@ -348,7 +202,7 @@ summary_data <- data.frame(
 # Print summary data to verify SEM values
 print(summary_data)
 
-# 👇 Add this to set correct order: Social on the left, Non-Social on the right
+# Social on the left, Non-Social on the right
 summary_data$Choice_Type <- factor(summary_data$Choice_Type, levels = c("Social", "Non-Social"))
 
 
@@ -378,9 +232,160 @@ propsoc_choicetype <- ggplot(summary_data, aes(x = Choice_Type, y = mean_prop, f
 # Save the plot
 ggsave("social_vs_nonsocial_choices_fixed.png", plot = propsoc_choicetype, width = 10, height = 8, dpi = 300)
 
+
+#generate scatter plot for Individual social spending difference where each point shows a participant’s spending difference
+
+#extract social decision price mean from rej and acc dfs
+totalspent_soc_rej <- rej$social_decisionprice_mean
+totalspent_soc_acc <- acc$social_decisionprice_mean
+
+# Combine into a new data frame
+onebar_df <- data.frame(
+  rej_avgspent = totalspent_soc_rej,
+  acc_avgspent = totalspent_soc_acc
+)
+onebar_df$difference <- onebar_df$acc_avgspent - onebar_df$rej_avgspent
+
+# Mean and standard error of difference scores
+mean_diff <- mean(onebar_df$difference, na.rm = TRUE)
+se_diff <- sd(onebar_df$difference, na.rm = TRUE) / sqrt(sum(!is.na(onebar_df$difference)))
+
+# Put in summary dataframe for plotting
+summary_df <- data.frame(Difference = mean_diff, SE = se_diff)
+
+
+# Plot subject-level differences with group mean + SE
+scatter <- ggplot(onebar_df, aes(x = "", y = difference)) +
+  
+  # Horizontal line at 0 (solid)
+  geom_hline(yintercept = 0, color = "black", size = 0.8) +
+  
+  # Individual points (larger and semi-transparent)
+  geom_jitter(width = 0.05, size = 4, alpha = 0.4, color = "gray40") +
+  
+  # Group mean (larger, strong green fill, black outline)
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    size = 6,
+    shape = 21,            # circle with border
+    fill = "forestgreen",  # strong green fill
+    color = "black",       # black outline
+    stroke = 1.5           # outline thickness
+  ) +
+  
+  # Error bars for group mean
+  stat_summary(
+    fun.data = mean_se,
+    geom = "errorbar",
+    width = 0.2,
+    color = "forestgreen",
+    size = 1
+  ) +
+  
+  # Labels
+  ylab("Spending Difference (Acc – Rej)") +
+  xlab("Participants") +
+  
+  # Minimal theme with tweaks
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title.x = element_text(size = 26, face = "bold", margin = margin(t = 25)),
+    axis.title.y = element_text(size = 26, face = "bold", margin = margin(r = 25)),
+    axis.text.x = element_text(size = 24, face = "bold"),
+    axis.text.y = element_text(size = 24, face = "bold"),
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 30)
+  )
+
+
+# Save plot
+ggsave("scatter_diffspent_soc.png", plot = scatter, width = 8, height = 8, dpi = 300)
+
+
+
+
+
+# Run a paired t-test for mean decision price across conditions
+rej_acc_decisionprice <- t.test(rej$social_decisionprice_mean, 
+                                acc$social_decisionprice_mean, 
+                                paired = TRUE, 
+                                alternative = "two.sided")
+
+# Print the results
+print(rej_acc_decisionprice)
+
+# Function to calculate Standard Deviation safely
+safe_sd <- function(x) {
+  if (length(na.omit(x)) > 1) {
+    return(sd(x, na.rm = TRUE))
+  } else {
+    return(NA)
+  }
+}
+
+# Rejection = 1, Acceptance = -1
+rej_long <- wtp_rej_longdata %>% filter(condition_recode == 1)   # Rejection
+acc_long <- wtp_rej_longdata %>% filter(condition_recode == -1)  # Acceptance
+
+# Compute Mean Decision Price for Each Condition
+mean_data <- wtp_rej_longdata %>%
+  group_by(condition_recode) %>%
+  summarise(
+    mean_spent = mean(social_decisionprice_mean, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Compute SD separately for Rejection and Acceptance
+sd_rej <- safe_sd(rej_long$social_decisionprice_mean)
+sd_acc <- safe_sd(acc_long$social_decisionprice_mean)
+
+# Ensure SDs exist
+print(paste("SD for Rejection:", sd_rej))
+print(paste("SD for Acceptance:", sd_acc))
+
+# Assign SD values 
+summary_data <- mean_data %>%
+  mutate(
+    sd_spent = c(sd_rej, sd_acc),  
+    condition_recode = factor(condition_recode, levels = c(1, -1), labels = c("Rejection", "Acceptance"))  # ✅ Correct ordering
+  )
+
+#Check if both conditions appear
+print(summary_data)
+
+# Plot: Amount Spent on Social by Condition
+amtspent <- ggplot(summary_data, aes(x = condition_recode, y = mean_spent, fill = condition_recode)) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black", alpha = 0.8) +
+  geom_errorbar(aes(ymin = mean_spent - sd_spent, ymax = mean_spent + sd_spent), 
+                width = 0.1, position = position_dodge(.9), color = "black", size = 0.8) +
+  scale_fill_manual(name = "Condition", values = c("Rejection" = "#FF6F61", "Acceptance" = "#88CCEE")) +
+  labs(
+    x = "Social Condition",
+    y = "Amount Spent on Social"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title.x = element_text(size = 26, face = "bold", margin = margin(t = 25)),
+    axis.title.y = element_text(size = 26, face = "bold", margin = margin(r = 25)),
+    axis.text.x = element_text(size = 24, face = "bold"),
+    axis.text.y = element_text(size = 24, face = "bold"),
+    legend.title = element_text(size = 24, face = "bold"),
+    legend.text = element_text(size = 22, face = "bold"),
+    plot.margin = margin(t = 20, r = 20, b = 20, l = 30)
+  )
+
+# Save the plot
+ggsave("avgspent_social_rejvacc_plot_fixed.png", plot = amtspent, width = 10, height = 8, dpi = 300)
+
+
+
+
+#point of subjective equivalence analyses
 #hierarchical logistic regression for PSE of social vs non social
 PSE_notcondition <- glmer(socialchoice ~ value_diff + (1 + value_diff | participant),
-             data = wtp_rej_longdata, family = binomial)
+                          data = wtp_rej_longdata, family = binomial)
 
 summary(PSE_notcondition)
 
@@ -426,7 +431,7 @@ ggsave("PSE_plot_overall.png", plot = PSE_plot1, width = 10, height = 8, dpi = 3
 
 #hierarchical logistic regression for PSE with interaction of condition
 PSE <- glmer(socialchoice ~ value_diff * condition_recode + (1 + value_diff | participant),
-               data = wtp_rej_longdata, family = binomial)
+             data = wtp_rej_longdata, family = binomial)
 summary(PSE)
 
 # Assign the coefficients
@@ -470,7 +475,7 @@ pred_data <- pred_data %>%
     linear_predictor = b0 + b1 * value_diff + b2 * condition_recode + b3 * value_diff * condition_recode,
     predicted_prob = 1 / (1 + exp(-linear_predictor))  # logistic function
   )
-  
+
 PSE_plot <- (
   ggplot(pred_data, aes(x = value_diff, y = predicted_prob, color = condition_label)) +
     geom_line(size = 1.2) +
@@ -505,131 +510,8 @@ PSE_plot <- (
     )
 )
 # Save the plot
-#ggsave("PSE_plot.png", PSE_plot, width = 6, height = 4, dpi = 300)
 ggsave("PSE_plot_fixed.png", plot = PSE_plot, width = 10, height = 8, dpi = 300)
 
-
-
-#run correlation of rsq with decision price in rejection condition
-
-rsq <- rsq %>%
-  rename(participant = Prolific_ID)
-
-rej <- rej %>%
-  left_join(rsq, by = "participant")
-
-rej <- rej %>%
-  mutate(rsq = unlist(rsq))
-
-#regression decision price
-condition_rsq <- condition_rsq <- lm(
-  social_decisionprice_mean ~ RSQ_finalscore,
-  data = rej
-)
-summary(condition_rsq)
-
-wtp_rej_longdata <- wtp_rej_longdata %>%
-  left_join(rsq, by = "participant")
-
-#PSE analysis with RSQ included
-
-PSE_withrsq <- glmer(
-  socialchoice ~ value_diff * condition_recode * RSQ_finalscore + (1 + value_diff | participant),
-  data = wtp_rej_longdata,
-  family = binomial
-)
-
-summary(PSE_withrsq)
-
-############################################ Mixed Effects Regression with PCA components below
-
-setwd("/Users/jordansiegel/Documents/Github/WTP_Rejection_Choice/scoring")
-pca_data<-read.csv(file='wtp_rej_PCA_allsubjects.csv',header=TRUE, sep=',')
-# Rename Prolific_ID to participant in the PCA data frame
-colnames(pca_data)[colnames(pca_data) == "Prolific_ID"] <- "participant"
-
-
-colnames(wtp_rej_longdata)
-colnames(pca_data)
-
-
-# Merge PCA components into your main dataset
-merged_data <- left_join(wtp_rej_longdata, pca_data, by = "participant")
-
-condition_choiceprice_withpca <- lmer(decision_price ~ condition_recode + PC1 + PC2 + (1 | participant), data = merged_data)
-
-condition_choiceprice_withpcaonly <- lmer(decision_price ~ + PC1 + PC2 + (1 | participant), data = merged_data)
-
-condition_choicetype_withpca <- lmer(socialchoice ~ condition_recode + age + order_var + sex + timebetween + PC1 + PC2 + (1 | participant),data = merged_data)
-
-condition_choicetype_withpcaonly <- lmer(socialchoice ~ condition_recode * PC1 + condition_recode* PC2 + value_diff + decision_price + (1 | participant), data = merged_data)
-
-condition_choicetype_withpcaonly3way <- lmer(socialchoice ~ condition_recode + value_diff * PC1 * condition_recode + PC2 + (1 | participant), data = merged_data)
-
-condition_choicetype_valuediff_int_withpcaonly <- lmer(socialchoice ~ 1+ value_diff * PC1 + condition_recode * PC1 + PC2 * condition_recode + (1 | participant), data = merged_data)
-
-summary(condition_choicetype_withpcaonly3way)
-summary(condition_choiceprice_withpca)
-summary(condition_choicetype_withpca)
-summary(condition_choiceprice_withpcaonly)
-summary(condition_choicetype_withpcaonly)
-summary(condition_choicetype_valuediff_int_withpcaonly)
-
-
-model_interaction <- lmer(decision_price ~ condition_recode * (PC1 + PC2 + PC3) +
-                            age + order_var + sex + timebetween + (1 | participant),
-                          data = merged_data)
-summary(model_interaction)
-
-model_interaction_choicetype <- lmer(socialchoice ~ condition_recode * (PC1 + PC2 + PC3) +
-                            age + order_var + sex + timebetween + (1 | participant),
-                          data = merged_data)
-summary(model_interaction_choicetype)
-
-###running by models within conditions
-merged_data_rej <- subset(merged_data, condition_recode == "1")
-merged_data_acc <- subset(merged_data, condition_recode == "-1")
-
-model_rej <- lmer(decision_price ~ PC1 + PC2 + PC3 + age + order_var + sex + timebetween + (1 | participant),
-                data = merged_data_rej)
-model_acc <- lmer(decision_price ~ PC1 + PC2 + PC3 + age + order_var + sex + timebetween + (1 | participant),
-                data = merged_data_acc)
-summary(model_rej)
-summary(model_acc)
-
-condition_valuediff_withpca <- lmer(decision_price ~ value_diff * condition_recode + PC1 + PC2 + PC3 + (1 + value_diff | participant), data = merged_data)
-
-summary(condition_valuediff_withpca)
-
-ggplot(merged_data, aes(x = PC1, y = value_diff)) +
-  +     geom_smooth(method = "lm", se = TRUE, color = "blue") +
-  +     labs(title = "Regression Line of Value Difference on PC1",
-             +          x = "PC1", y = "Value Difference") +
-  +     theme_minimal()
-
-#################################### regression instead of ANOVA data frame
-long_df <- wtp_rej_shortdata %>%
-  pivot_longer(
-    cols = c(social_decisionprice_total, nonsocial_decisionprice_total),
-    names_to = "choice_source",
-    values_to = "decisionprice_total"  # use a temporary unique name
-  ) %>%
-  mutate(
-    choicetype = case_when(
-      choice_source == "social_decisionprice_total" ~ 1,
-      choice_source == "nonsocial_decisionprice_total" ~ 0
-    ),
-    condition_recode = recode(condition_recode, `1` = 1, `2` = -1)
-  ) %>%
-  select(participant, condition_recode, choice = decisionprice_total, choicetype) %>%
-  arrange(participant, condition_recode, choicetype)
-
-print(head(long_df, 10))
-
-#run regression model:
-
-twobytwo <- lm(choice ~ condition_recode*choicetype, data=long_df)
-summary(twobytwo)
 
 #logistic regression of condition predicting the type of choice made
 
@@ -637,14 +519,21 @@ condition_choicetype <- glm(formula = socialchoice ~ condition_recode, family=bi
 summary(condition_choicetype)
 
 #Logit regression: trial by trial (mixed effects models) Social_choice ~ condition_recode * decision_price
-wtp_rej_longdata$decision_price_z <- scale(wtp_rej_longdata$decision_price)
-decisionprice_condition_onchoice1 <- lmer(socialchoice ~  decision_price_z * condition_recode + (1 | participant), data = wtp_rej_longdata)
-summary(decisionprice_condition_onchoice1)
-#plot_model(decisionprice_condition_onchoice1, type='int')
+
+#create a nonselected_price column which represents the value of the option not selected
+wtp_rej_longdata <- wtp_rej_longdata %>%
+  mutate(notselected_price = case_when(
+    social_price == nonsocial_price ~ social_price,                     # both equal
+    decision_price == social_price ~ nonsocial_price,                  # social was chosen, take nonsocial
+    decision_price == nonsocial_price ~ social_price                   # nonsocial was chosen, take social
+  ))
+
+decisionprice_condition_onchoice <- lmer(socialchoice ~  decision_price * condition_recode + notselected_price+ (1 | participant), data = wtp_rej_longdata)
+summary(decisionprice_condition_onchoice)
 
 
-# Generate predicted probabilities across values of decision_price_z
-preds <- ggpredict(decisionprice_condition_onchoice1, terms = c("decision_price_z", "condition_recode"))
+# Generate predicted probabilities across values of decision_price and generate plot of interaction
+preds <- ggpredict(decisionprice_condition_onchoice, terms = c("decision_price", "condition_recode"))
 
 # View structure
 head(preds)
@@ -664,7 +553,7 @@ linearmixedeffects <- ggplot(preds, aes(x = x, y = predicted, color = group, fil
     labels = c("-1" = "Acceptance", "1" = "Rejection")
   ) +
   labs(
-    x = "Decision Price (z)",
+    x = "Decision Price",
     y = "Pred Probability of Choosing Social"
   ) +
   theme_minimal() +
@@ -681,13 +570,27 @@ linearmixedeffects <- ggplot(preds, aes(x = x, y = predicted, color = group, fil
 
 # Save the plot
 
-ggsave("linearmixedeffects.png", plot = linearmixedeffects, width = 10, height = 8, dpi = 300)
+ggsave("figure4.png", plot = linearmixedeffects, width = 10, height = 8, dpi = 300)
 
-stress <- lm( stress_mean ~ condition_recode, data=wtp_rej_shortdata)
-summary(stress)
 
-likelihoodtoshare <- lm(salience_mean ~ condition_recode + PC1 + PC2, data=merged_data)
-summary(likelihoodtoshare)
+
+# Mixed Effects Regression with PCA components below
+
+setwd("/Users/jordansiegel/Documents/Github/WTP_Rejection_Choice/scoring")
+
+pca_data<-read.csv(file='wtp_rej_PCA_allsubjects.csv',header=TRUE, sep=',')
+
+# Rename Prolific_ID to participant in the PCA data frame
+colnames(pca_data)[colnames(pca_data) == "Prolific_ID"] <- "participant"
+
+colnames(wtp_rej_longdata)
+colnames(pca_data)
+
+
+# Merge PCA components into main dataset, PCA analysis conducted in jupyter notebook
+merged_data <- left_join(wtp_rej_longdata, pca_data, by = "participant")
+
+
 
 #principal components analysis
 pca_simple <- lmer(socialchoice ~ PC1 + PC2 + salience_mean+ (1 | participant), data = merged_data)
@@ -734,3 +637,16 @@ ggsave("pcmixedeffects.png", plot = pcmixedeffects, width = 10, height = 8, dpi 
 
 #comparing models
 anova(pca_simple, pca_complex)
+
+
+
+
+
+
+
+
+
+
+
+
+
